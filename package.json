@@ -25,6 +25,11 @@
     "postinstall": "jspm install && gulp bundle"
   },
   "dependencies": {
+    "express": "^4.13.4",
+    "express-force-domain": "0.0.6",
+    "express-history-api-fallback": "^2.0.0",
+    "morgan": "^1.6.1",
+    "prerender-node": "^2.2.0",
     "aurelia-bundler": "^0.1.9",
     "aurelia-tools": "^0.1.3",
     "babel": "^5.8.23",
