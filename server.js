@@ -16,6 +16,7 @@
 
     // set up ========================
     var express  = require('express');
+    var compression =  require('compression');
     var fallback = require('express-history-api-fallback')
     var root     = __dirname
     var app      = express();                               // create our app w/ express
@@ -43,7 +44,8 @@
     //client -------------------------------------------------------------
                                                  
     //app.use(require('prerender-node').set('prerenderServiceUrl', currentConfig.prerenderServiceURL).set('prerenderToken', 'kvMVBs5R8VN7sRRPN8EA'));
-    
+    // compress all requests
+    app.use(compression());
     app.use(express.static(root, { maxAge: currentConfig.cacheShort} ));
     app.use(express.static(root + '/dist', { maxAge: currentConfig.cacheShort, index: false} ));
     app.use(express.static(root + '/images', { maxAge: currentConfig.cacheLong, index: false} ));
