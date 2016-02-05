@@ -24,7 +24,7 @@
     "start": "node server.js",
     "postinstall": "jspm install && gulp bundle"
   },
-  "Dependencies": {
+  "dependencies": {
     "aurelia-bundler": "^0.1.9",
     "aurelia-tools": "^0.1.3",
     "babel": "^5.8.23",
