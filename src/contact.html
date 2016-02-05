@@ -1,0 +1,82 @@
+<template>
+<!-- CONTACT -->
+<section class="module">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<h1 class="module-title font-alt">Get In Touch</h1>
+				<div class="module-subtitle font-serif">I'd love to hear from you.</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-1">
+				<form id="contact-form" role="form" novalidate="">
+					<div class="form-group">
+						<label class="sr-only" for="cname">Name</label>
+						<input type="text" 
+						id="cname" 
+						class="form-control" 
+						name="cname" 
+						placeholder="Name*" 
+						required="" 
+						data-validation-required-message="Please enter your name."
+						value.bind="email.name">
+						<p class="help-block text-danger"></p>
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="cemail">Your Email</label>
+						<input type="email" id="cemail" name="cemail" class="form-control" placeholder="Your E-mail*" required="" data-validation-required-message="Please enter your email address."
+						value.bind="email.address">
+						<p class="help-block text-danger"></p>
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="cbudget">Budget</label>
+						<input type="text" id="cbudget" name="cbudget" class="form-control" placeholder="Budget" 
+						value.bind="email.budget">
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" id="cmessage" name="cmessage" rows="7" placeholder="Message*" required="" data-validation-required-message="Please enter your message."
+						value.bind="email.message"></textarea>
+						<p class="help-block text-danger"></p>
+					</div>
+					<div class="text-center">
+						<button type="submit" class="btn btn-block btn-round btn-d" click.delegate="sendEmail()">Send</button>
+					</div>
+				</form>
+				<!-- Ajax response -->
+				<div id="contact-response" class="font alt" style="font-family: Playfair Display; font-size: 20px; font-weight: 600; font-style: italic;" >
+					<span>${email.name}, thank you so much for getting in touch.  I'll get back to you as soon as possible!</span>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<!-- ALT CONTENT BOX -->
+				<div class="alt-content-box m-t-0 m-t-sm-30">
+					<div class="alt-content-box-icon"><i class="ion-paper-airplane"></i></div>
+					<h5 class="alt-content-box-title font-alt">Say Hello</h5> 
+					 <i class="ion-ios-email-outline" style="padding-right:10px;font-size:20px;"></i> info@davebrownphotography.com
+					<br> <i class="ion-ios-telephone-outline" style="padding-right:10px;font-size:20px;"></i> 303-949-6889
+				</div>
+				<!-- /ALT CONTENT BOX -->
+
+				<!-- ALT CONTENT BOX -->
+				<div class="alt-content-box">
+					<div class="alt-content-box-icon"><i class="ion-map"></i>
+					</div>
+					<h5 class="alt-content-box-title font-alt">Studio Address</h5>
+					12364 W Alameda Pkwy #125 
+					<br> Lakewood, CO 80228
+					<br>
+					<a href="#module-maps" class="section-scroll">See my studio on a map →</a>
+				</div>
+				<!-- /ALT CONTENT BOX -->
+			</div>
+		</div>
+	</div>
+</section>
+<!-- GOOGLE MAP -->
+<section id="module-maps">
+	<div id="map"></div>
+</section>
+<!-- /GOOGLE MAP -->
+<!-- /CONTACT -->
+</template>

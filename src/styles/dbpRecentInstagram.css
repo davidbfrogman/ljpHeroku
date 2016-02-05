@@ -1,0 +1,74 @@
+/*
+Instagram Styles
+*/
+.insta-profile{
+    margin: auto;
+    width:200px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+}
+
+.insta-profile-img{
+            border-radius: 20px 20px 20px 20px;
+       -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    border: 0px solid #000000;
+}
+
+.instagram-img{
+}
+
+.instagram-container
+{
+    margin: 0px 15px 10px 15px;
+    padding-bottom: 15px;
+    width: 80%;
+    margin: auto;
+}
+
+.instagram-module-title {
+	/*text-transform: uppercase;*/
+    font-family: "Dosis", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 10px;
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 30px;
+}
+
+.insta-item {
+	position: relative;
+	border-top: 1px solid #eee;
+	border-right: 1px solid #eee;
+	text-align: center;
+    width: 100px;
+}
+
+.insta-item:hover {
+    -webkit-transition: opacity 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	   -moz-transition: opacity 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	     -o-transition: opacity 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	        transition: opacity 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	opacity: .5;
+}
+
+.insta-item:before {
+	position: absolute;
+	border-left: 1px solid #eee;
+    height: 100%;
+	content: "";
+	top: 0;
+	left: -1px;
+}
+
+.insta-item:after {
+	position: absolute;
+	border-bottom: 1px solid #eee;
+    width:100%;
+	content: "";
+	bottom: -1px;
+	left: 0;
+}

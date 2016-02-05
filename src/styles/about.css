@@ -1,0 +1,26 @@
+.owl-container{
+    background-color:white;
+    opacity:.7; 
+    padding:30px 60px 30px 60px;
+            border-radius: 20px 20px 20px 20px;
+       -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    border: 0px solid #000000;
+}
+
+.quote-icon{
+    font-size: 35px;
+}
+
+.selfie-img{
+            border-radius: 20px 20px 20px 20px;
+       -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+}
+
+.services-img{
+            /*border-radius: 20px 20px 20px 20px;
+       -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;*/
+    margin-bottom: 20px;
+}

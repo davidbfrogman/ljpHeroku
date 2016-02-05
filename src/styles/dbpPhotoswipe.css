@@ -1,0 +1,14 @@
+/* ------------------------------------------------------------------
+Custom styles for photoswipe
+------------------------------------------------------------------ */
+
+.pswp__bg{
+	background-color: white;
+	opacity: 1;
+}
+
+.pswp__top-bar{
+	background-color: white;
+	color: black;
+}
+

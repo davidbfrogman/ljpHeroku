@@ -1,0 +1,20 @@
+<template>
+  <section>
+      <div class="row blog-posts" >
+        <h5 class="blog-module-title font-alt">Recent Blog Posts</h5>
+        <div class="col-sm-6 col-md-3" repeat.for="post of posts">
+                <div class="BlogTitle">
+                  <a href.bind="post.url" target="blank">
+                    <h3>${post.title}</h3>
+                    </a>
+                </div>
+                <div class="BlogDate" >
+                  ${post.formattedDate}
+                </div>
+                <div class="BlogSnippet">
+                  <div innerhtml="${post.snippet | sanitizeHTML}"></div>
+                </div>
+        </div>
+      </div>
+  </section>
+</template>

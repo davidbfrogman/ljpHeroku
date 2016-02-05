@@ -1,0 +1,80 @@
+<template>
+<div class="" style="margin: 20px 50px 20px 50px;">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <h3>Portfolio Books</h3>
+            </div>
+            <button class="btn btn-info"
+            click.delegate="navigateToCreateNew()">
+            New
+            </button>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th click.delegate="sort('id')" ><a href="#">Id</a></th>
+                            <th click.delegate="sort('isActive')"><a href="#">Is Active</a></th>
+                            <th click.delegate="sort('isSingle')"><a href="#">Is Single</a></th>
+                            <th>Cover</th>
+                            <th click.delegate="sort('category')"><a href="#">Category</a></th>
+                            <th click.delegate="sort('order')"><a href="#">Order</a></th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr repeat.for="portfolioBook of portfolioBooks">
+                            <td><a href="#" click.delegate="$parent.navigateToEdit(portfolioBook)">${portfolioBook.id}</a></td>
+                            <td><input type="checkbox" checked.bind="portfolioBook.isActive" change.delegate="updatePortfolioBook(portfolioBook)" /></td>
+                            <td><input type="checkbox" checked.bind="portfolioBook.isSingle" change.delegate="updatePortfolioBook(portfolioBook)" /></td>
+                            <td><a href="#" click.delegate="$parent.navigateToEdit(portfolioBook)"><img style="max-width:none;width:auto; height:40%;" src.bind="'/images/thumbs/' + portfolioBook.imageThumbnailURL" /></a></td>
+                            <td><select value.bind="portfolioBook.category" style="width:150px">
+                                    <option/>
+                                    <option>Fashion</option>
+                                    <option>Editorial Portrait</option>
+                                    <option>Band</option>
+                                    <option>Headshot</option>
+                                    <option>Editorial</option>
+                                    <option>Tears</option>
+                                </select>
+                            </td>
+                            <td><input type="text" value.bind="portfolioBook.order" style="width:40px"/></td>
+                            <td><input type="text" value.bind="portfolioBook.title" /></td>
+                            <td><textarea rows="5" class="form-control" value.bind="portfolioBook.description" style="width:800px" ></textarea></td>
+                            <td><a href="#" click.delegate="$parent.deletePortfolioBook(portfolioBook)"><i class="ion-trash-b"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-info" click.delegate="SaveBooks()" >Save Portfolio Books</button>
+            <span id="spnSaveStatus" ></span>
+        </div>
+    </div>
+</div>
+<section style="margin:30px; width: 400px;">
+        <div>
+            <h2>Here you can upload your single portfolio images.</h2>
+            <div>Default Category for the singles</div>
+            <div>
+                <select value.bind="singleCategory">
+                <option/>
+                <option>Fashion</option>
+                <option>Editorial Portrait</option>
+                <option>Band</option>
+                <option>Headshot</option>
+                <option>Editorial</option>
+                <option>Tears</option>
+                </select>
+            </div>
+            <input type="text" placeholder="Default Order" class="form-control" value.bind="singleOrder" />
+            <input id="inptSingles" type="file" placeholder="Files to Create Singles From" multiple/>
+            <button class="btn btn-info" click.delegate="AddSinglePortfolioBooks()" >Add Single Portfolio Books</button>
+        </div>    
+</section>
+</template>

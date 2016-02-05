@@ -1,0 +1,66 @@
+<template>
+    <require from='../styles/dbpNavBar.css'></require>
+    <!-- OVERLAY MENU -->
+    <!--Notice how I put the visibility hidden here, otherwise you get a stupid black flashing screen when the page finally shows up-->
+    <!-- in this first div right here-->
+    <div class="overlay-menu" style="visibility:hidden;">
+        <a href="#" click.delegate="hideOverlayMenu()" id="overlay-menu-hide" class="navigation-hide"><i class="ion-close-round"></i></a>
+        <div class="overlay-menu-inner">
+            <nav class="overlay-menu-nav">
+                <ul id="nav">
+                    <li repeat.for="row of router.navigation">
+                        <a data-toggle="collapse" data-target="#" href.bind="row.href" click.delegate="hideOverlayMenu()" class="${row.isActive ? 'active' : ''}">${row.title}</a>
+                    </li>
+                    <li>
+                       <a href="http://blog.davebrownphotography.com" target="blank" click.delegate="navigateToBlog()">Blog</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- /OVERLAY MENU -->
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-custom navbar-transparent navbar-light navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- YOU LOGO HERE -->
+                <a class="navbar-brand" href="/">
+                    <!-- IMAGE OR SIMPLE TEXT -->
+                    <span class="nav-bar-subtitle">Dave Brown // Photographer</span>
+                    <!--<img src="assets/images/logo-dark.png" width="95" alt="">-->
+                </a>
+            </div>
+            <!--<div class="navbar-header">
+                <ul class="nav navbar-nav ">
+                    <li>
+                        <a href="#" click.delegate="changeLanguage('en')" title="Change Language to English">en</a>
+                    </li>
+                    <li>
+                        <a href="#" click.delegate="changeLanguage('cz')" title="Change Language to Czech">cz</a>
+                    </li>
+                </ul>
+            </div>-->
+            <!-- ICONS NAVBAR -->
+            
+            <ul id="icons-navbar" class="nav navbar-nav navbar-right">
+                <li><a href="#" class="menu-text-link" style="padding-right:0px;" click.delegate="showOverlayMenu()">menu</a></li>
+                <li> 
+                        <a href="#" click.delegate="showOverlayMenu()"  id="toggle-menu" class="show-overlay" title="Menu">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
+
+                </li>
+            </ul>
+            <!--Nav Bar spinner that will show when you're navigating-->
+            <!--if.bind="router.isNavigating"-->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="loader" >
+                    <div class="spinner" if.bind="router.isNavigating"></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /NAVIGATION -->
+</template>

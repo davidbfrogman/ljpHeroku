@@ -1,0 +1,16 @@
+<template>
+    <require from='../styles/dbpBottomNav.css'></require>
+    <!-- /OVERLAY MENU -->
+    <!-- NAVIGATION -->
+    <nav>
+        <ul id="bottomnav" class="dbp-bottom-nav-links text-center m-b-20">
+            <li repeat.for="row of router.navigation">
+                <a data-toggle="collapse" data-target="#" href.bind="row.href" class="${row.isActive ? 'active' : ''} dbp-bottom-nav">${row.title}</a>
+            </li>
+            <li>
+                <a href="http://blog.davebrownphotography.com" target="blank" click.delegate="hideOverlayMenu()">Blog</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- /NAVIGATION -->
+</template>

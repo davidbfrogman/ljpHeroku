@@ -1,0 +1,53 @@
+.dbp-bottom-nav a {
+    color: black;
+    padding-right: 5px;
+    -webkit-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+    -moz-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+        -o-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+        transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+}
+
+.dbp-bottom-nav-links{
+	list-style: none;
+	padding: 0;
+	margin: 0px 0px 0px 0px;
+}
+
+.dbp-bottom-nav-links > li {
+	display: inline-block;
+	margin: 10px 10px 10px;
+}
+
+#bottomnav,
+#bottomnav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#bottomnav > li > a {
+	font-family: "Dosis", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 20px;
+	color: #666;
+}
+
+#bottomnav li a:hover, #bottomnav li a.active {
+	color: #009485;
+}
+
+#bottomnav li ul {
+	display: none;
+	padding: 5px 0;
+	margin: 5px 0 10px;
+}
+
+#bottomnav li ul li a {
+	display: inline-block;
+	padding: 6px 0;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 11px;
+	color: #666;
+}

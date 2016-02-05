@@ -1,0 +1,101 @@
+.loading-text {
+    font-family:'Times New Roman'; 
+    text-transform: uppercase; 
+    letter-spacing: 3px; 
+    text-align:center;
+    padding-top:10px;
+}
+
+#loader-wrapper {
+      position: fixed;
+      top: 30px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+    }
+    
+    #loader {
+      display: block;
+      position: relative;
+      left: 50%;
+      top: 150px;
+      width: 150px;
+      height: 150px;
+      margin: -75px 0 0 -75px;
+      z-index: 1500;
+    }
+    
+    #loader:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+    }
+    
+    #loader:after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+    }
+    
+    /* change border to transparent and set only border-top to a solid color */
+    #loader {
+        border: 3px solid transparent;
+        border-top-color: #4db6ac;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+    }
+    #loader:before {
+        border: 3px solid transparent;
+        border-top-color: #bdbdbd;
+        -webkit-animation: spin 3s linear infinite;
+        animation: spin 3s linear infinite;
+    }
+    #loader:after {
+        border: 3px solid transparent;
+        border-top-color: #90a4ae;
+        -webkit-animation: spin 1.5s linear infinite;
+        animation: spin 1.5s linear infinite;
+    }
+    
+    #loader {
+        border-radius: 50%;
+    }
+    #loader:before {
+        border-radius: 50%;
+    }
+    #loader:after {
+        border-radius: 50%;
+    }
+    
+    /* include this only once */
+    @-webkit-keyframes spin {
+        0%   {
+            -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(0deg);  /* IE 9 */
+            transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(360deg);  /* IE 9 */
+            transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+    }
+    @keyframes spin {
+        0%   {
+            -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(0deg);  /* IE 9 */
+            transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(360deg);  /* IE 9 */
+            transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+    }

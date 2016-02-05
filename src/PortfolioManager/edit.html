@@ -1,0 +1,119 @@
+<template>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h3>Editing ${portfolioBook.title}</h3>
+                </div>
+                <button class="btn btn-info" click.delegate="goBack()">Back</button>
+                <button class="btn btn-info" click.delegate="cancel()" disabled.bind="canSave">Cancel</button>
+                <button class="btn btn-info" click.delegate="save(true)" disabled.bind="canSave">Save</button>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" validate.bind="validation">
+                   <div class="form-group">
+                        <label class="col-sm-2 control-label">Id</label>
+                        <div class="col-sm-10">
+                            <span>${portfolioBook.id}</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Is Active</label>
+                        <div class="col-sm-10">
+                            <input type="checkbox" class="form-control" checked.bind="portfolioBook.isActive" />
+                        </div>
+                    </div>
+                   <div class="form-group">
+                        <label class="col-sm-2 control-label">Category</label>
+                        <div class="col-sm-10">
+                              <select value.bind="portfolioBook.category">
+                                <option/>
+                                <option>Fashion</option>
+                                <option>Editorial Portrait</option>
+                                <option>Band</option>
+                                <option>Headshot</option>
+                                <option>Editorial</option>
+                              </select>
+                        </div>
+                    </div>                      
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Order</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="Order" class="form-control" value.bind="portfolioBook.order" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Title</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="Title" class="form-control" value.bind="portfolioBook.title" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Subtitle</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="Subtitle" class="form-control" value.bind="portfolioBook.subtitle" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Class</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="Class" class="form-control" value.bind="portfolioBook.class" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Image Thumbnail URL</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="Image Thumbnail URL" class="form-control" value.bind="portfolioBook.imageThumbnailURL" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Description</label>
+                        <div class="col-sm-10">
+                            <textarea rows="5" class="form-control" value.bind="portfolioBook.description" ></textarea>
+                        </div>
+                    </div>
+                    <!--AltText ImageURL Order -->
+                    <div class="">
+                        <table class="table table-condensed table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Cover?</th>
+                                    <th>Order</th>
+                                    <th>Image</th>
+                                    <th>Image URL</th>
+                                    <th>Alt Text</th>
+                                    <th>Width</th>
+                                    <th>Height</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr repeat.for="portfolioItem of portfolioBookItems">
+                                    <td><span>${portfolioItem.id}</span></td>
+                                    <td><a href="#" click.delegate="setAsCover(portfolioItem)"><i class="ion-wand"></i></a></td>
+                                    <td><input type="text" value.bind="portfolioItem.order" /></td>
+                                    <td><img style="max-width:none;width:auto; height:10%;" src.bind="'/images/fulls/' + portfolioItem.imageURL" /></td>
+                                    <td><input type="text" value.bind="portfolioItem.imageURL" /></td>
+                                    <td><input type="text" value.bind="portfolioItem.altText" /></td>
+                                    <td><input type="text" value.bind="portfolioItem.width" /></td>
+                                    <td><input type="text" value.bind="portfolioItem.height" /></td>
+                                    <td><a href="#" click.delegate="$parent.deletePortfolioItem(portfolioItem)"><i class="ion-trash-b"></i></a></td>
+                                </tr>
+                                <tr>
+                                   <td><a href="#" click.delegate="$parent.addEmptyPortfolioItem(portfolioBook,null,null)"><i class="ion-ios-plus"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-info" click.delegate="save(true)" disabled.bind="canSave">Save</button>
+                    </div>
+                    <div>
+                        <input id="inptPortfolioFiles" type="file" placeholder="Files To get names from" multiple/>
+                        <button class="btn btn-info" click.delegate="addFiles()" >Add Portfolio Items</button>
+                    </div>
+                </form>
+                <!-- disabled.bind="!validation.result.isValid" -->
+            </div>
+        </div>
+    </div>
+</template>

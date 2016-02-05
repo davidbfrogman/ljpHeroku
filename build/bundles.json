@@ -1,0 +1,63 @@
+
+{
+  "bundles": {
+    "dist/bundle-dbp": {
+      "includes": [
+        "[*.js]",
+        "[3rdParty/*.js]",
+        "[controls/*.js]",
+        "*.html!text",
+        "controls/*.html!text",
+        "**/*.css!text",
+        "webfontloader",
+        "photoswipe-ui-default",
+        "text",
+        "fetch",
+        "isotope-layout",
+        "isotope-packery",
+        "imagesloaded",
+        "photoswipe"
+      ],
+      "options": {
+        "inject": true,
+        "minify": true,
+        "depCache": true,
+        "rev": true
+      }
+    },
+    "dist/bundle-dbp-portmanager": {
+      "includes": [
+        "[PortfolioManager/*.js]",
+        "PortfolioManager/*.html!text"
+      ],
+      "options": {
+        "inject": true,
+        "minify": true,
+        "depCache": true,
+        "rev": true
+      }
+    },
+    "dist/bundle-aurelia": {
+      "includes": [
+        "aurelia-framework",
+        "aurelia-bootstrapper",
+        "aurelia-fetch-client",
+        "aurelia-router",
+        "aurelia-templating-binding",
+        "aurelia-templating-resources",
+        "aurelia-templating-router",
+        "aurelia-loader-default",
+        "aurelia-history-browser",
+        "aurelia-logging-console",
+        "bootstrap",
+        "bootstrap/css/bootstrap.css!text"
+      ],
+      "options": {
+        "inject": true,
+        "minify": true,
+        "depCache": true,
+        "rev": true
+      }
+    }
+  }
+}

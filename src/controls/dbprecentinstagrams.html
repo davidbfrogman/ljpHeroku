@@ -1,0 +1,44 @@
+<template>
+    <require from='../styles/dbpRecentInstagram.css'></require>
+    <section>
+        <div class="row" style="padding-bottom:30px;">
+            <h5 class="instagram-module-title">Recent Instagram Posts</h5>
+            <div class="row" style="padding-bottom:10px;">
+                <div class="col-md-5"></div>
+                <div class="col-md-2">
+                    <a href.bind="'https://www.instagram.com/' + userdata.username" target="_blank" rel="external nofollow">
+                    <div style="margin:auto; width:100px;"><img id="img-profile" class="insta-profile-img" /></div>
+                    <div class="counter-title font-alt" style="margin:auto; width:200px; text-align:center">${userdata.username}</div>
+                    </a>
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+            <div class="row" style="padding-bottom:30px; margin:auto; width:400px;">        
+                <div class="col-xs-4 counter-item">
+                    <div class="counter-title font-alt">
+                        <h5 class="font-alt counter-number" data-number="${userdata.followersCount}"><span ></span></h5>Followers
+                    </div>
+                </div>
+                <div class="col-xs-4 counter-item">
+                    <div class="counter-title font-alt">
+                        <h5 class="font-alt counter-number" data-number="${userdata.postsCount}"><span ></span></h5>Posts
+                    </div>
+                </div>
+                <div class="col-xs-4 counter-item">
+                    <div class="counter-title font-alt">
+                        <h5 class="font-alt counter-number" data-number="${userdata.followingCount}"><span ></span></h5>Following
+                    </div>
+                </div>
+            </div>
+            <div class="instagram-container">
+                <div class="col-md-2 col-sm-4 col-xs-6 insta-item" repeat.for="post of posts">
+                    <div>
+                        <a href.bind="post.link" target="_blank" rel="external nofollow">
+                            <img class="instagram-img" src.bind="post.imageURL" alt.bind="post.caption" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

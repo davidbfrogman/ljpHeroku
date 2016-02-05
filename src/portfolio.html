@@ -1,0 +1,107 @@
+<template>
+  <require from='styles/3rdParty/photoswipe/photoswipe.css'></require>
+  <require from='styles/3rdParty/photoswipe/default-skin/default-skin.css'></require>
+  <require from='styles/dbpPhotoswipe.css'></require>
+  <require from='styles/dbpPortfolio.css'></require>
+  <section id="portfolio-grid" class="portfolio">
+    <section>
+      <div class="row filters-container">
+        <ul id="filters" class="filters font-alt">
+          <li repeat.for="category of portfolioCategories">
+              <a href="#" click.delegate="filterPortfolio(category.filter, category.name)" id="${category.name}">${category.name}  <sup><small>${category.count}</small></sup></a>
+          </li>    
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div class="row">
+        <div class="col-md-1 col-sm-0"></div>
+        <div id="works-grid" class="grid works-hover-w col-md-10 col-sm-12">
+          <div repeat.for="book of portfolioBooks">
+            <div repeat.for="item of book.items">
+            <div class="grid-item ${book.class} ${book.category}" click.delegate="showPortfolioItems(book,item)">
+              <a href="#"><!--item.imageURL book.imageThumbnailURL-->
+                <img src.bind="'/images/thumbs/' + item.imageURL" alt.bind="$first ? book.description : item.altText">
+                <div class="work-caption font-alt">
+                  <h3 class="work-title">${book.title}</h3>
+                  <div class="work-descr">${book.subtitle}</div>
+                </div>
+              </a>
+            </div>
+           </div> 
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1 col-sm-0"></div>
+    </section>
+  </section>
+  <section id="sec-photo-swipe" style="margin-bottom:80px; margin-top: 40px;">
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+      <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+       <!--Here's where you change the color to whatever you want.-->
+      <div class="pswp__bg"></div>
+
+      <!-- Slides wrapper with overflow:hidden. -->
+      <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+          <div class="pswp__top-bar photoswipe-top-bar">
+
+            <!--  Controls are self-explanatory. Order can be changed. -->
+
+            <div class="pswp__counter font-alt"></div>
+
+            <button class="pswp__button pswp__button--close" title="Close (Esc)">
+              <i style="font-size:30px; opacity: .4" class="pswp__button--close ion-android-close"></i>
+            </button>
+            <!--<button class="pswp__button pswp__button--share" title="Share"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>-->
+
+            <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+            <!-- element will get class pswp__preloader--active when preloader is running -->
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div>
+          </div>
+
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            <i style="opacity: 1; margin-right:25px; font-size:30px;" class="ion-chevron-left"></i>
+          </button>
+
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            <i style="opacity: 1; margin-left:25px;font-size:30px;" class="ion-chevron-right"></i>
+          </button>
+
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</template>
