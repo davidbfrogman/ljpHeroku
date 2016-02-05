@@ -26,14 +26,6 @@ export class App {
       { route: ['portfolioDetail'], name: 'portfolioDetail', moduleId: 'portfolioDetail', nav: false, title: 'portfolioDetail' },
     //   { route: ['portfolioManager'], name: 'portfolioManager', moduleId: './PortfolioManager/index', nav: true, title: 'Port Manager' }
     ]);
-    
-
-    //------------How to get the URL redirect to work with IIS.  --------------------------------
-    //If you're having trouble getting your app to redirect back to the homepage, you need to realize that this is a server based configuration thing.
-    //You're not going to get it done here in the router. Instead you need to setup IIS to redirect on a 404.
-    //Go in and change the option in IIS to redirect on a 404 to /index.html
-    //Then you need to change the default option on IIS from serving up error pages on local dev, to always show the custom error page.  This will cause IIS to show
-    //the custom error page, which you've setup on a 404 to be /index.html
 
     this.router = router;
   }
