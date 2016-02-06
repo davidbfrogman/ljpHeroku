@@ -18,6 +18,7 @@
     "type": "git",
     "url": "http://github.com/davidbfrogman/DBPHeroku"
   },
+  "cacheDirectories": ["node_modules", "jspm_packages"],
   "scripts": {
     "test": "gulp test",
     "e2e": "gulp serve e2e",
