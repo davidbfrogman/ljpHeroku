@@ -1,18 +1,18 @@
 {
-  "name": "aurelia-skeleton-navigation",
-  "version": "1.0.0-beta.1",
-  "description": "A starter kit for building a standard navigation-style app with Aurelia.",
+  "name": "Dave Brown Photography SPA",
+  "version": "1.0.0.1",
+  "description": "My Portfolio App",
   "keywords": [
-    "aurelia",
-    "navigation",
-    "skeleton"
+    "Photography",
+    "portfolio",
+    "mobile"
   ],
-  "homepage": "http://aurelia.io",
+  "homepage": "http://www.davebrownphotography.com/",
   "bugs": {
-    "url": "http://www.davebrownphotography.com/"
+    "url": "http://github.com/davidbfrogman/DBPHeroku"
   },
   "license": "CC0-1.0",
-  "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
+  "author": "Dave Brown (http://www.davebrownphotography.com)",
   "main": "server.js",
   "repository": {
     "type": "git",
