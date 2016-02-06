@@ -84,7 +84,7 @@ gulp.task('run-image-optimization', function(callback) {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-system', 'build-html', 'build-css-styles','build-content','optimize-images'],
+    ['build-system', 'build-html', 'build-css-styles','build-content'],
     callback
   );
 });

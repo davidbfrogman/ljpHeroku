@@ -38,6 +38,8 @@ export class dbprecentinstagrams {
                 console.log('done getting back userdata for instagram')
                 )
            .then( () =>{ $('#img-profile').attr("src", this.userdata.profileImageUrl); });
+           
+       this.drawCounters();
     }
 
     drawCounters() {
