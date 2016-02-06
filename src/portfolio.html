@@ -21,7 +21,7 @@
             <div repeat.for="item of book.items">
             <div class="grid-item ${book.class} ${book.category}" click.delegate="showPortfolioItems(book,item)">
               <a href="#"><!--item.imageURL book.imageThumbnailURL-->
-                <img src.bind="'/images/thumbs/' + item.imageURL" alt.bind="$first ? book.description : item.altText">
+                <img src.bind="'/dist/images/thumbs/' + item.imageURL" alt.bind="$first ? book.description : item.altText">
                 <div class="work-caption font-alt">
                   <h3 class="work-title">${book.title}</h3>
                   <div class="work-descr">${book.subtitle}</div>

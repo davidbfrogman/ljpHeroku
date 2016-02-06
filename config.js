@@ -13,7 +13,7 @@ System.config({
     "npm:*": "jspm_packages/npm/*"
   },
   bundles: {
-    "bundle-dbp-portmanager-81428d3ac9.js": [
+    "bundle-dbp-portmanager-2b81c55856.js": [
       "PortfolioManager/PortfolioManagerService.js",
       "PortfolioManager/edit.html!github:systemjs/plugin-text@0.0.4.js",
       "PortfolioManager/edit.js",
@@ -111,7 +111,7 @@ System.config({
       "npm:process@0.11.2.js",
       "npm:process@0.11.2/browser.js"
     ],
-    "bundle-dbp-e853c525af.js": [
+    "bundle-dbp-3c2453ea2c.js": [
       "3rdParty/appear.js",
       "3rdParty/dbpParallax.js",
       "3rdParty/owl.carousel.js",

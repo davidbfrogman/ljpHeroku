@@ -9,6 +9,8 @@ var paths = require('../paths');
 var compilerOptions = require('../babel-options');
 var assign = Object.assign || require('object.assign');
 var notify = require("gulp-notify");
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
@@ -57,6 +59,23 @@ gulp.task('build-content', function() {
     .pipe(gulp.dest(paths.output));
 });
 
+gulp.task('optimize-images', () => {
+	return gulp.src(paths.imagesIn)
+        .pipe(debug())
+		.pipe(imagemin({
+			progressive: true,
+			svgoPlugins: [{removeViewBox: false}],
+			use: [pngquant()]
+		}))
+		.pipe(gulp.dest(paths.imagesOut));
+});
+
+gulp.task('run-image-optimization', function(callback) {
+  return runSequence(
+    ['optimize-images'],
+    callback
+  );
+});
 
 // this task calls the clean task (located
 // in ./clean.js), then runs the build-system
@@ -65,7 +84,7 @@ gulp.task('build-content', function() {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-system', 'build-html', 'build-css-styles','build-content'],
+    ['build-system', 'build-html', 'build-css-styles','build-content','optimize-images'],
     callback
   );
 });
@@ -73,7 +92,7 @@ gulp.task('build', function(callback) {
 gulp.task('build-no-source-maps', function(callback) {
   return runSequence(
     'clean',
-    ['build-system-no-source-maps', 'build-html', 'build-css-styles','build-content'],
+    ['build-system-no-source-maps', 'build-html', 'build-css-styles','build-content', 'optimize-images'],
     callback
   );
 });

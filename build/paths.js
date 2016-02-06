@@ -9,6 +9,8 @@ module.exports = {
   html: appRoot + '**/*.html',
   styles: appRoot + '**/*.css',
   content: appRoot + '**/*.png',
+  imagesIn: './images/**/*.jpg',
+  imagesOut: outputRoot + '/images/',
   output: outputRoot,
   exportSrv: exporSrvtRoot,
   doc: './doc',

@@ -156,7 +156,7 @@ export class Portfolio {
             var h = item.height == 0 ? 800 : item.height;
 
             items.push({
-                src: '/images/fulls/' + item.imageURL,
+                src: '/dist/images/fulls/' + item.imageURL,
                 w: w,
                 h: h
             });
