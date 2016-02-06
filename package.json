@@ -23,7 +23,7 @@
     "e2e": "gulp serve e2e",
     "start": "node server.js",
     "_comment": "Removing jspm install for right now old command: jspm install && gulp bundle",
-    "postinstall": "gulp bundle"
+    "postinstall": "jspm install && gulp bundle"
   },
   "dependencies": {
     "aurelia-bundler": "^0.1.9",
