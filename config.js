@@ -191,6 +191,7 @@ System.config({
       "npm:wolfy87-eventemitter@4.2.11/EventEmitter.js",
       "portfolio.html!github:systemjs/plugin-text@0.0.4.js",
       "portfolio.js",
+      "styles/3rdParty/ionicons/ionicons.min.css!github:systemjs/plugin-text@0.0.4.js",
       "styles/3rdParty/owlslider/owl.carousel.css!github:systemjs/plugin-text@0.0.4.js",
       "styles/3rdParty/owlslider/owl.theme.default.css!github:systemjs/plugin-text@0.0.4.js",
       "styles/3rdParty/photoswipe/default-skin/default-skin.css!github:systemjs/plugin-text@0.0.4.js",
