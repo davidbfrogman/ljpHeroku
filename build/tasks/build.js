@@ -25,6 +25,17 @@ gulp.task('build-system', function() {
     .pipe(gulp.dest(paths.output));
 });
 
+gulp.task('build-system-no-source-maps', function() {
+  return gulp.src(paths.source)
+    .pipe(debug())
+    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+    .pipe(changed(paths.output, {extension: '.js'}))
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(to5(assign({}, compilerOptions, {modules: 'system'})))
+    .pipe(sourcemaps.write({includeContent: true}))
+    .pipe(gulp.dest(paths.output));
+});
+
 // copies changed html files to the output directory
 gulp.task('build-html', function() {
   return gulp.src(paths.html)
@@ -55,6 +66,14 @@ gulp.task('build', function(callback) {
   return runSequence(
     'clean',
     ['build-system', 'build-html', 'build-css-styles','build-content'],
+    callback
+  );
+});
+
+gulp.task('build-no-source-maps', function(callback) {
+  return runSequence(
+    'clean',
+    ['build-system-no-source-maps', 'build-html', 'build-css-styles','build-content'],
     callback
   );
 });

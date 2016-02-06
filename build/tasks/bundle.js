@@ -9,7 +9,7 @@ var config = {
   bundles: bundles.bundles
 };
 
-gulp.task('bundle', ['unbundle', 'build'], function() {
+gulp.task('bundle', ['unbundle', 'build-no-source-maps'], function() {
   return bundler.bundle(config);
 });
 
