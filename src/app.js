@@ -39,5 +39,17 @@ export class App {
         families: ['Dosis','Open Sans:300','Playfair Display:400']
         }
     });
+    
+    this.loadjscssfile("https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css", "css");
   }
+  
+   loadjscssfile(filename, filetype){
+       console.log('inserting css for ion icons');
+            var fileref  =document.createElement("link");
+            fileref.setAttribute("rel", "stylesheet");
+            fileref.setAttribute("type", "text/css");
+            fileref.setAttribute("href", filename);
+            
+       document.getElementsByTagName("head")[0].appendChild(fileref);
+    }
 }

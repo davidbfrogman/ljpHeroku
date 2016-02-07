@@ -59,6 +59,12 @@ gulp.task('build-content', function() {
     .pipe(gulp.dest(paths.output));
 });
 
+gulp.task('copy-images', function() {
+  return gulp.src(paths.imagesIn)
+    .pipe(changed(paths.imagesOut, {extension: '.jpg'}))
+    .pipe(gulp.dest(paths.imagesOut));
+});
+
 gulp.task('optimize-images', () => {
 	return gulp.src(paths.imagesIn)
         .pipe(debug())
@@ -84,7 +90,7 @@ gulp.task('run-image-optimization', function(callback) {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-system', 'build-html', 'build-css-styles','build-content'],
+    ['build-system', 'build-html', 'build-css-styles','build-content', 'copy-images'],
     callback
   );
 });
