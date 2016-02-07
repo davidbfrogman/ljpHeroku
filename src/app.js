@@ -36,7 +36,7 @@ export class App {
        //@import url("http://fonts.googleapis.com/css?family=Dosis|Libre+Baskerville:400italic|Open+Sans:300,400,400italic,700|Playfair+Display:400,700italic,400italic,700,900|Source+Sans+Pro");
        WebFont.load({
         google: {
-        families: ['Dosis', 'Libre Baskerville:400italic','Open Sans:300,400,400italic,700','Playfair Display:400,700italic,400italic,700,900', 'Source Sans Pro']
+        families: ['Dosis','Open Sans:300','Playfair Display:400']
         }
     });
   }
