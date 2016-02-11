@@ -3,9 +3,7 @@
   "bundles": {
     "dist/bundle-dbp": {
       "includes": [
-        "[*.js]",
-        "[3rdParty/*.js]",
-        "[controls/*.js]",
+        "[**/**/*.js]",
         "*.html!text",
         "controls/*.html!text",
         "**/*.css!text",
@@ -20,9 +18,15 @@
       ],
       "options": {
         "inject": true,
-        "minify": true,
-        "depCache": true,
-        "rev": true
+        "minify": false,
+        "depCache": false,
+        "rev": true,
+        "htmlminopts": {
+                                            
+        },
+        "cssminopts" : {
+                                            
+        }
       }
     },
     "dist/bundle-dbp-portmanager": {
@@ -33,12 +37,18 @@
       "options": {
         "inject": true,
         "minify": true,
-        "depCache": true,
-        "rev": true
+        "depCache": false,
+        "rev": true,
+        "htmlminopts": {
+                                       
+        },
+        "cssminopts" : {
+                                           
+        }
       }
     },
     "dist/bundle-aurelia": {
-      "includes": [
+       "includes": [
         "aurelia-framework",
         "aurelia-bootstrapper",
         "aurelia-fetch-client",
@@ -55,7 +65,7 @@
       "options": {
         "inject": true,
         "minify": true,
-        "depCache": true,
+        "depCache": false,
         "rev": true
       }
     }

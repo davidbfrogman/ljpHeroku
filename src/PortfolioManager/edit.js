@@ -1,6 +1,6 @@
-import {inject} from "aurelia-framework";
-import {PortfolioManagerService} from "./PortfolioManagerService";
-import {Router} from "aurelia-router";
+import {inject} from 'aurelia-framework';
+import {PortfolioManagerService} from './PortfolioManagerService';
+import {Router} from 'aurelia-router';
 
 @inject(PortfolioManagerService, Router)
 export class Edit {

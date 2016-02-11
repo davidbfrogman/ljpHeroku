@@ -8,3 +8,5 @@
 - Is your webconfig giving you weird errors?  Make sure you have the Rewrite module installed.  I had to install rewrite2 or something like that to get it working.
 
 - Turn on the forcing domain bit in express
+
+jspm update aurelia-bootstrapper aurelia-fetch-client aurelia-framework aurelia-history-browser aurelia-loader-default aurelia-logging-console aurelia-router aurelia-templating-binding aurelia-templating-resources aurelia-templating-router

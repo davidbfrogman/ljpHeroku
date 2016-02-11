@@ -32,9 +32,7 @@ gulp.task('build-system-no-source-maps', function() {
     .pipe(debug())
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(changed(paths.output, {extension: '.js'}))
-    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(to5(assign({}, compilerOptions, {modules: 'system'})))
-    .pipe(sourcemaps.write({includeContent: true}))
     .pipe(gulp.dest(paths.output));
 });
 
@@ -95,7 +93,15 @@ gulp.task('build', function(callback) {
   );
 });
 
-gulp.task('build-no-source-maps', function(callback) {
+gulp.task('build-for-bundle', function(callback) {
+  return runSequence(
+    'clean',
+    ['build-system-no-source-maps', 'build-html', 'build-css-styles','build-content', 'copy-images'],
+    callback
+  );
+});
+
+gulp.task('build-for-deploy', function(callback) {
   return runSequence(
     'clean',
     ['build-system-no-source-maps', 'build-html', 'build-css-styles','build-content', 'optimize-images'],

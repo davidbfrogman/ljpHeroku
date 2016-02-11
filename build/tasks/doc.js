@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var tools = require('aurelia-tools');
 var paths = require('../paths');
-var yuidoc = require('gulp-yuidoc');
 
 // uses yui to generate documentation to doc/api.json
 gulp.task('doc-generate', function() {
