@@ -53,7 +53,7 @@ System.config({
     "jquery": "npm:jquery@2.2.0",
     "parallax-scroll": "npm:parallax-scroll@0.1.1",
     "photoswipe": "npm:photoswipe@4.1.1",
-    "photoswipe-ui-default": "npm:photoswipe@4.1.1/dist/photoswipe-ui-default",
+    "photoswipe-ui-default": "npm:photoswipe@4.1.1",
     "text": "github:systemjs/plugin-text@0.0.4",
     "webfontloader": "npm:webfontloader@1.6.20",
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -1170,7 +1170,7 @@ System.config({
       "npm:process@0.11.2.js",
       "npm:process@0.11.2/browser.js"
     ],
-    "bundle-dbp-ca06f77825.js": [
+    "bundle-dbp-86607301e7.js": [
       "3rdParty/appear.js",
       "3rdParty/dbpParallax.js",
       "3rdParty/owl.carousel.js",
@@ -1245,7 +1245,6 @@ System.config({
       "npm:packery@1.4.3/js/packery.js",
       "npm:packery@1.4.3/js/rect.js",
       "npm:photoswipe@4.1.1.js",
-      "npm:photoswipe@4.1.1/dist/photoswipe-ui-default.js",
       "npm:photoswipe@4.1.1/dist/photoswipe.js",
       "npm:process@0.11.2.js",
       "npm:process@0.11.2/browser.js",

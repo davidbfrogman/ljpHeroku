@@ -8,7 +8,6 @@
         "controls/*.html!text",
         "**/*.css!text",
         "webfontloader",
-        "photoswipe-ui-default",
         "text",
         "fetch",
         "isotope-layout",

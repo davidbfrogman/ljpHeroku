@@ -9,7 +9,7 @@ import Isotope from 'isotope-layout';
 import Packery from 'isotope-packery';
 import imagesloaded from 'imagesloaded';
 import PhotoSwipe from 'photoswipe';
-import PhotoSwipeUI_Default from 'photoswipe-ui-default';
+import PhotoSwipeUI_Default from 'npm:photoswipe@4.1.1/dist/photoswipe-ui-default.js';
 
 @inject(HttpClient, PortfolioManagerService, dbpheader, dbpUtility)
 export class Portfolio {
