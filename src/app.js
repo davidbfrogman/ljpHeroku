@@ -39,8 +39,8 @@ export class App {
         //         families: ['Dosis', 'Open Sans:300', 'Playfair Display:400']
         //     }
         // });
-        this.loadScript('https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js')
-        this.loadjscssfile("https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css", "css");
+        this.loadScript('https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js');
+        this.loadcssfile("https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css");
     }
 
     loadScript(src) {
@@ -50,17 +50,21 @@ export class App {
             s.src = src;
             s.onload = resolve;
             s.onerror = reject;
-            document.head.appendChild(s);
+            document.getElementsByTagName("body")[0].appendChild(s);
         });
     }
 
-    loadjscssfile(filename, filetype) {
+    loadcssfile(filename) {
+        return new Promise(function (resolve, reject){
         console.log('inserting css for ion icons');
         var fileref = document.createElement("link");
         fileref.setAttribute("rel", "stylesheet");
         fileref.setAttribute("type", "text/css");
         fileref.setAttribute("href", filename);
+        fileref.setAttribute("media","none");
+        fileref.setAttribute("onload","if(media!='all')media='all'");
 
         document.getElementsByTagName("body")[0].appendChild(fileref);
+        });
     }
 }
