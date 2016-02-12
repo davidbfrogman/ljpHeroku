@@ -80,6 +80,12 @@
 }
 
 @media (max-width: 500px) {
+    
+    .navbar-brand{
+        width:50px;
+        display:none;
+    }
+    
     .menu-text-link{
         visibility: hidden;
     }
@@ -87,5 +93,9 @@
     .nav-bar-subtitle{
         font-size: 10px;
     }
-
+    
+    .nav-bar-subtitle-subtext{
+        font-size: 10px;
+        display: none;
+    }
 }
