@@ -12,4 +12,6 @@
 - Most likely if you're having problems with photoswipe, it's because you're including a very specific version in portfolio.js.  If photoswipe gets updated
 you'll want to update that import statement.
 
+- I figured out the Inject is not a function error.  Which was caused by the bundles.json file having depCache = true.  If you manage to screw this up again that's most likely the problem.
+
 jspm update aurelia-bootstrapper aurelia-fetch-client aurelia-framework aurelia-history-browser aurelia-loader-default aurelia-logging-console aurelia-router aurelia-templating-binding aurelia-templating-resources aurelia-templating-router

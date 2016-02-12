@@ -1,22 +1,18 @@
 <template>
-  <!--Apparently to create the kinds of child controls like this footer here
-  You need to include the js file which has the class in it.  Otherwise the bindings won't work, and it will just insert it as
-  raw html.  To debug this stuff setup the control with a real route, and put it into the menu.  When you click on that route, it will load
-  the control, and you'll better be able to diagnose what's going on with it.  Also notice it's included in the html below.
-  I will also say it seems like you're not allowed to capitalize this stuff.  No idea why, but that seems to be why renaming was so hard.
-  -->
-  <!--I put the styles first so that I can override them in child controls.-->
-  <!--Setting my prerender flag to false here -->
+  
+  
+  <require from='bootstrap/css/bootstrap.css'></require>
+  <require from='styles/styles.css'></require>
+  
+  <require from='styles/dbpNavBar.css'></require>
+  
   <require from="controls/dbpnavbar"></require>
   <require from="controls/dbpbottomnav"></require>
   <require from="controls/dbprecentposts"></require>
   <require from="controls/dbprecentinstagrams"></require>
   <require from="controls/dbpfooter"></require>
   <require from="controls/dbpheader"></require>
-  <!--<require from="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"></require>--> 
   
-  <require from='bootstrap/css/bootstrap.css'></require>
-  <require from='styles/styles.css'></require>
   <dbpnavbar></dbpnavbar>
   <dbpheader></dbpheader>
   <hr class="divider"/>

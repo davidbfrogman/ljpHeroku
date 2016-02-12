@@ -146,4 +146,13 @@ Works item hover
         margin: 0px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
     }
+    
+    .ps-document-overlay, .ps-carousel {
+        max-height: 80%;
+        max-width: 80%;
+    }
+
+    .ps-toolbar {
+        margin-top: -1px; 
+    }
 }
