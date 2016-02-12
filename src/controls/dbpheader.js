@@ -40,9 +40,11 @@ export class dbpheader {
 		/* ---------------------------------------------- /*
 		 * Parallax
 		/* ---------------------------------------------- */
-		
-		this.dbpParallax.init();
-        $('#hero.module-parallax').parallax('50%', 40 , 0.4);
+		if(!mobileTest)
+        {
+            this.dbpParallax.init();
+            $('#hero.module-parallax').parallax('50%', 40 , 0.4);
+        }
 
 		/* ---------------------------------------------- /*
 		 * Full height module
