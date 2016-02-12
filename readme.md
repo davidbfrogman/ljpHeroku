@@ -9,4 +9,7 @@
 
 - Turn on the forcing domain bit in express
 
+- Most likely if you're having problems with photoswipe, it's because you're including a very specific version in portfolio.js.  If photoswipe gets updated
+you'll want to update that import statement.
+
 jspm update aurelia-bootstrapper aurelia-fetch-client aurelia-framework aurelia-history-browser aurelia-loader-default aurelia-logging-console aurelia-router aurelia-templating-binding aurelia-templating-resources aurelia-templating-router
