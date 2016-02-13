@@ -24,7 +24,8 @@
     var logger   = morgan('combined');
     // set our port
     var port = process.env.PORT || 8080;
-    var currentConfig = config.devConfig;  //Pick which config you want to use, whether it's production or dev.   
+    
+    var currentConfig = process.env.prod ? config.prodConfig : config.devConfig;
     
     //This will be helpful on production when we want to force users to www version of my site.
     // if(currentConfig.production){
@@ -43,7 +44,7 @@
     
     //client -------------------------------------------------------------
                                                  
-    //app.use(require('prerender-node').set('prerenderServiceUrl', currentConfig.prerenderServiceURL).set('prerenderToken', 'kvMVBs5R8VN7sRRPN8EA'));
+    app.use(require('prerender-node').set('prerenderServiceUrl', currentConfig.prerenderServiceURL));
     // compress all requests
     app.use(compression());
     app.use(express.static(root, { maxAge: currentConfig.cacheShort} ));
