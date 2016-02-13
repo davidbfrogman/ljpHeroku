@@ -828,6 +828,8 @@ Team
 .team-descr {
 	text-align: center;
 	padding-top: 15px;
+    width: 90%;
+    margin: auto;
 }
 
 .team-name {
