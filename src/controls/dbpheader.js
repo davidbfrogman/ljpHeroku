@@ -6,6 +6,7 @@ import {dbpParallax} from '../3rdParty/dbpParallax';
 export class dbpheader {
 	heading = 'Denver Fashion Photographer';
 	portfolioBooks = [];
+    mobileTest = false;
 
 	constructor(dbpParallax) {
 		this.dbpParallax = dbpParallax;
@@ -69,12 +70,13 @@ export class dbpheader {
     }
     
     shrinkHeroModule(height, offsetForImage){
-        console.log('about to shrink the hero module.');
-        $('#hero').height(height)
+        $('#hero').height(height);
+        if(this.mobileTest){
+            //The 3 parameters here are ypos percentage, top offset in pixels, and speed.
+            //default should be 175
+            $('#hero.module-parallax').parallax('50%', offsetForImage, 0.4);
+        }
         
-        //The 3 parameters here are ypos percentage, top offset in pixels, and speed.
-        //default should be 175
-        $('#hero.module-parallax').parallax('50%', offsetForImage, 0.4);
         $('.hero-caption').fadeOut(500);
     }
 }
