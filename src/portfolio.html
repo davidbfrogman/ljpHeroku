@@ -18,9 +18,9 @@
         <div class="col-md-1 col-sm-0"></div>
         <div id="works-grid" class="grid works-hover-w col-md-10 col-sm-12">
           <div repeat.for="book of portfolioBooks">
-            <div repeat.for="item of book.items">
-            <div class="grid-item ${book.class} ${book.category}" click.delegate="showPortfolioItems(book,item)">
-              <a href="#"><!--item.imageURL book.imageThumbnailURL-->
+            <div repeat.for="item of book.items"><!--click.delegate="showPortfolioItems(book,item)" link goes on the div below.-->
+            <div class="grid-item ${book.class} ${book.category}" >
+              <a href.bind="'/imagedetail/?id=' + book.id ">
                 <img src.bind="'/dist/images/thumbs/' + item.imageURL" alt.bind="$first ? book.description : item.altText">
                 <div class="work-caption font-alt">
                   <h3 class="work-title">${book.title}</h3>
