@@ -92,7 +92,7 @@ export class Portfolio {
             .progress((instance, image) => {
                 //TODO: Figure out how to relayout the isotope instance
                 //as the images are loaded.
-                if(instance.progressedCount % 10 == 0)
+                if(instance.progressedCount % 20 == 0)
                 {
                     if(!self.isotopeBuilt){
                          self.buildIsotope();

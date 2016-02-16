@@ -55,26 +55,32 @@
     //tries to send back index.html for the system.js and config.js files.  I want it to send back the js files.
     //
     
-    app.get('/*.aspx', function(req, res, next) {
-        console.log(req.originalUrl);
-        res.redirect(301, '/index.html/about');
-        //res.sendFile(root + '/index.html'); // load the single view file (aurelia will handle the page changes on the front-end)
-        next();
-    });
+    // app.get('/*.aspx', function(req, res, next) {
+    //     console.log(req.originalUrl);
+    //     res.redirect(301, '/index.html/about');
+    //     //res.sendFile(root + '/index.html'); // load the single view file (aurelia will handle the page changes on the front-end)
+    //     //next();
+    // });
+    
+
     
     app.use(express.static(root, { maxAge: currentConfig.cacheShort} ));
     app.use(express.static(root + '/dist', { maxAge: currentConfig.cacheShort, index: false} ));
     app.use(express.static(root + '/images', { maxAge: currentConfig.cacheLong, index: false} ));
     app.use(express.static(root + '/jspm_packages', { maxAge: currentConfig.cacheLong, index: false} ));
     app.use(express.static(root + '/node_modules', { maxAge: currentConfig.cacheLong, index: false} ));
-        
-    app.use(fallback('index.html', { root }));
     
-    app.get('*', function(req, res, next) {
-        console.log(req.originalUrl);
-        //res.sendFile(root + '/index.html'); // load the single view file (aurelia will handle the page changes on the front-end)
-        next();
+    app.get('*', function (req, res) {
+        res.sendFile(root + '/index.html');
     });
+        
+    //app.use(fallback('index.html', { root }));
+    
+    // app.get('*', function(req, res, next) {
+    //     console.log(req.originalUrl);
+    //     res.sendFile(root + '/index.html'); // load the single view file (aurelia will handle the page changes on the front-end)
+    //     next();
+    // });
     
     // listen (start app with node server.js) ======================================
     app.listen(port);
