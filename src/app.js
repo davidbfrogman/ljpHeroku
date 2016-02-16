@@ -19,7 +19,7 @@ export class App {
         config.options.pushState = true;
 
         config.map([
-            { route: ['portfolio', '', 'index.html'], name: 'portfolio', moduleId: 'portfolio', nav: true, title: 'Portfolio' },
+            { route: ['portfolio', '', 'index.html', '*.aspx'], name: 'portfolio', moduleId: 'portfolio', nav: true, title: 'Portfolio' },
             { route: ['about'], name: 'about', moduleId: 'about', nav: true, title: 'About' },
             { route: ['faq'], name: 'faq', moduleId: 'faq', nav: true, title: 'FAQ' },
             { route: ['contact'], name: 'contact', moduleId: 'contact', nav: true, title: 'Contact' },

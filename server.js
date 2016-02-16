@@ -53,7 +53,14 @@
     //So you can't tack on a route here.... which is weird.  what I'd really like the fallback to be is my portfolio.
     //So now I have app.js using index.html as a default route for my portfolio.  Otherwise the server
     //tries to send back index.html for the system.js and config.js files.  I want it to send back the js files.
-    //app.use(fallback('index.html', { root }));
+    //
+    
+    app.get('/*.aspx', function(req, res, next) {
+        console.log(req.originalUrl);
+        res.redirect(301, '/index.html/about');
+        //res.sendFile(root + '/index.html'); // load the single view file (aurelia will handle the page changes on the front-end)
+        next();
+    });
     
     app.use(express.static(root, { maxAge: currentConfig.cacheShort} ));
     app.use(express.static(root + '/dist', { maxAge: currentConfig.cacheShort, index: false} ));
@@ -61,7 +68,7 @@
     app.use(express.static(root + '/jspm_packages', { maxAge: currentConfig.cacheLong, index: false} ));
     app.use(express.static(root + '/node_modules', { maxAge: currentConfig.cacheLong, index: false} ));
         
-    
+    app.use(fallback('index.html', { root }));
     
     app.get('*', function(req, res, next) {
         console.log(req.originalUrl);
