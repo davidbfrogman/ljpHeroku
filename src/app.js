@@ -19,15 +19,15 @@ export class App {
         config.options.pushState = true;
 
         config.map([
-            { route: ['portfolio', '', 'index.html', '*.aspx'], name: 'portfolio', moduleId: 'portfolio', nav: true, title: 'Portfolio' },
+            { route: ['portfolio', ''], name: 'portfolio', moduleId: 'portfolio', nav: true, title: 'Portfolio' },
             { route: ['about'], name: 'about', moduleId: 'about', nav: true, title: 'About' },
             { route: ['faq'], name: 'faq', moduleId: 'faq', nav: true, title: 'FAQ' },
             { route: ['contact'], name: 'contact', moduleId: 'contact', nav: true, title: 'Contact' },
             { route: ['portfolioDetail'], name: 'portfolioDetail', moduleId: 'portfolioDetail', nav: false, title: 'portfolioDetail' },
             { route: ['portfolioManager'], name: 'portfolioManager', moduleId: './PortfolioManager/index', nav: false, title: 'Port Manager' },
             { route: ['imagedetail'], name: 'imagedetail', moduleId: 'imagedetail', nav: false, title: 'Portfolio Item Image Detail' }
-        ]);
-
+        ]).mapUnknownRoutes('portfolio', 'portfolio');
+        
         this.router = router;
     }
 

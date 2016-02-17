@@ -22,9 +22,11 @@
     var app      = express();                               // create our app w/ express
     var morgan   = require('morgan');             // log requests to the console (express4)
     var logger   = morgan('combined');
+    
     // set our port
     var port = process.env.PORT || 8080;
     
+    //Get the correct config prod/dev
     var currentConfig = process.env.prod ? config.prodConfig : config.devConfig;
     
     //This will be helpful on production when we want to force users to www version of my site.
@@ -46,41 +48,39 @@
                                                      
     app.use(require('prerender-node').set('prerenderServiceUrl', currentConfig.prerenderServiceURL));
     
+    console.log(__dirname);
+    
     // compress all requests
     app.use(compression());
+    app.use(express.static(root, {dotfiles : 'allow', maxAge: currentConfig.cacheShort} ));
+    app.use(express.static(root + '/dist', {dotfiles : 'allow', maxAge: currentConfig.cacheShort, index: false} ));
+    app.use(express.static(root + '/images', {dotfiles : 'allow', maxAge: currentConfig.cacheLong, index: false} ));
+    app.use(express.static(root + '/jspm_packages', {dotfiles : 'allow', maxAge: currentConfig.cacheLong, index: false} ));
+    app.use(express.static(root + '/node_modules', {dotfiles : 'allow', maxAge: currentConfig.cacheLong, index: false} ));
     
-    //this doesn't seem to work like I would think it would.
-    //So you can't tack on a route here.... which is weird.  what I'd really like the fallback to be is my portfolio.
-    //So now I have app.js using index.html as a default route for my portfolio.  Otherwise the server
-    //tries to send back index.html for the system.js and config.js files.  I want it to send back the js files.
-    //
+     app.get('.*aspx', function (req, res) {
+        console.log('hit an aspx handling here');
+        res.orignalUrl = '';
+        res.sendFile(root + '/index.html/about');
+    });
     
-    // app.get('/*.aspx', function(req, res, next) {
-    //     console.log(req.originalUrl);
-    //     res.redirect(301, '/index.html/about');
-    //     //res.sendFile(root + '/index.html'); // load the single view file (aurelia will handle the page changes on the front-end)
-    //     //next();
-    // });
-    
-
-    
-    app.use(express.static(root, { maxAge: currentConfig.cacheShort} ));
-    app.use(express.static(root + '/dist', { maxAge: currentConfig.cacheShort, index: false} ));
-    app.use(express.static(root + '/images', { maxAge: currentConfig.cacheLong, index: false} ));
-    app.use(express.static(root + '/jspm_packages', { maxAge: currentConfig.cacheLong, index: false} ));
-    app.use(express.static(root + '/node_modules', { maxAge: currentConfig.cacheLong, index: false} ));
+    app.get('*', function(request, response, next) {
+        if(request.originalUrl.indexOf('.aspx'))
+        {
+            console.log('this was definitely an aspx page');
+        }
+        console.log('hit catchall handling');
+        response.sendFile(root + '/index.html');
+    });
     
     app.get('*', function (req, res) {
-        res.sendFile(root + '/index.html');
-    });
+        console.log('request logger: ' + req);
         
-    //app.use(fallback('index.html', { root }));
-    
-    // app.get('*', function(req, res, next) {
-    //     console.log(req.originalUrl);
-    //     res.sendFile(root + '/index.html'); // load the single view file (aurelia will handle the page changes on the front-end)
-    //     next();
-    // });
+        res.sendFile(root + '/');
+        
+        res.originalUrl = '/';
+        console.log('response logger: ' + res);
+    });
     
     // listen (start app with node server.js) ======================================
     app.listen(port);
