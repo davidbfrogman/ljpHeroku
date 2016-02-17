@@ -30,8 +30,7 @@ export class dbpnavbar {
     attached() {
 
         var navbar = $('.navbar-custom');
-        this.navbatTrans,
-        self = this;
+        var self = this;
 
         this.overlayMenu = $('.overlay-menu');
 

@@ -5,6 +5,8 @@
 
 - Change out the fav.icon
 
+- Change the links on your blog to point to the correct place in your main site.
+
 - Is your webconfig giving you weird errors?  Make sure you have the Rewrite module installed.  I had to install rewrite2 or something like that to get it working.
 
 - Turn on the forcing domain bit in express

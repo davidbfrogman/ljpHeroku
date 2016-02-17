@@ -4,8 +4,10 @@ export class dbpParallax {
     };
     
     init(){
-        var $window = $(window);
+        
+            var $window = $(window);
 			var windowHeight = $window.height();
+            
 
 			$window.resize(function () {
 				windowHeight = $window.height();
@@ -16,6 +18,8 @@ export class dbpParallax {
 				var getHeight;
 				var firstTop;
 				var paddingTop = 0;
+                
+                var self = this;
 			
 				//get the starting position of each element to have parallax applied to it		
 				$this.each(function () {
@@ -40,25 +44,29 @@ export class dbpParallax {
 			
 				// function to be called whenever the window is scrolled or resized
 				function update() {
-					var pos = $window.scrollTop();
+                    window.requestAnimationFrame(function(){
+                        var pos = $window.scrollTop();
 
-					$this.each(function () {
-						var $element = $(this);
-						var top = $element.offset().top;
-						var height = getHeight($element);
-	
-						// Check if totally above or totally below viewport
-						if (top + height < pos || top > pos + windowHeight) {
-							return;
-						}
+                        $this.each(function () {
+                            var $element = $(this);
+                            var top = $element.offset().top;
+                            var height = getHeight($element);
+        
+                            // Check if totally above or totally below viewport
+                            if (top + height < pos || top > pos + windowHeight) {
+                                return;
+                            }
 
-						$this.css('backgroundPosition', xpos + " " + Math.round(((firstTop - pos) * speedFactor)-topOffset) + "px");
-					});	
+                            $this.css('backgroundPosition', xpos + " " + Math.round(((firstTop - pos) * speedFactor)-topOffset) + "px");
+                        });
+                    });    
 				}
-
-				$window.bind('scroll', update).resize(update);
-				update();
+                
+                 window.addEventListener("scroll", update);
+                 update();
+				 //$window.bind('scroll', window.requestAnimationFrame(update)).resize(window.requestAnimationFrame(update));
 			};
+            
     }
 }
 

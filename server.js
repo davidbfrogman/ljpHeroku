@@ -1,19 +1,5 @@
-    // configuration =================
-    var config = {
-        devConfig : {
-          production : false,  
-          cacheShort : '0',
-          cacheLong : '0',
-          prerenderServiceURL: 'http://localhost:3000'  
-        },
-        prodConfig : {
-            production : true,
-            cacheShort : '1d',
-            cacheLong : '7d',
-            prerenderServiceURL: 'http://service.prerender.io' //This probably needs to change.
-        },
-    }
-
+    
+    
     // set up ========================
     var express  = require('express');
     var compression =  require('compression');
@@ -22,20 +8,35 @@
     var app      = express();                               // create our app w/ express
     var morgan   = require('morgan');             // log requests to the console (express4)
     var logger   = morgan('combined');
+    var favicon  = require('serve-favicon');
+    var port     = process.env.PORT || 8080;        // set our port
+    var prodDomain = 'dbpspa.herokuapp.com';       //change this whenever we setup our cname
     
-    // set our port
-    var port = process.env.PORT || 8080;
+    // configuration =================
+    var config = {
+        devConfig : {
+          production : false,  
+          cacheShort : '0',
+          cacheLong : '0',
+          prerenderServiceURL: 'http://localhost:3000',
+          rootUrl : 'http://localhost:' + port   
+        },
+        prodConfig : {
+            production : true,
+            cacheShort : '1d',
+            cacheLong : '7d',
+            prerenderServiceURL: 'http://service.prerender.io', //This probably needs to change.
+            rootUrl : 'http://' + prodDomain
+        },
+    }
     
     //Get the correct config prod/dev
     var currentConfig = process.env.prod ? config.prodConfig : config.devConfig;
     
     //This will be helpful on production when we want to force users to www version of my site.
-    // if(currentConfig.production){
-    //     app.use( require('express-force-domain')('http://www.davebrownphotography.com') );
-    // }
-    // if(!currentConfig.production){
-    //     app.use( require('express-force-domain')('http://localhost:' + port) );
-    // }
+    app.use( require('express-force-domain')(currentConfig.rootUrl) );
+    
+    app.use(favicon(__dirname + '/favicon.ico'));
     
     // log every request to the console except images...
     app.use(
@@ -61,25 +62,46 @@
     app.get('*', function(req, res, next) {
         if(req.originalUrl.indexOf('.aspx') > 0)
         {
-            console.log('this was definitely an aspx page');
-            console.log('here is the original url: ' + req.originalUrl);
-            res.redirect(root + '/index.html');
-            req.originalUrl = '/about'
+            console.log('Handling Redirection for ASPX Page');
+            console.log('Heres the original URL for matching aspx page: ' + req.originalUrl);
+            console.log('Heres the req.hostname: ' + req.hostname);
+            res.status(301);
+            console.log(req.hostname);
+            
+            //Mobile Redirection
+            if(req.hostname.toLowerCase().indexOf('m.davebrownphotography.com') > 0 ){ 
+                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
+            }
+            if(req.originalUrl.toLowerCase().indexOf('about') > 0){
+                
+                res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/about' } });
+            }
+            if(req.originalUrl.toLowerCase().indexOf('contact') > 0){
+                
+                res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/contact' } });
+            }
+            if(req.originalUrl.toLowerCase().indexOf('faq') > 0 ){
+                
+                res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/faq' } });
+            }
+            else{  
+                res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } }); 
+            } 
+        }
+        //Redirect my old blog location.
+        if(req.originalUrl.toLowerCase().indexOf('bloginstall') > 0){
+                
+            var cleaned = req.originalUrl.toLowerCase();
+            
+            cleaned = cleaned.replace('/bloginstall','');
+            console.log('Cleaned Blog URL:' + cleaned);
+            res.redirect(301, 'http://blog.davebrownphotography.com' + cleaned);
         }
         else
         {
-           console.log('hit catchall handling');
+           console.log('hit catchall handling not in an aspx page.');
            res.sendFile(root + '/index.html');
         }
-    });
-    
-    app.get('*', function (req, res) {
-        console.log('request logger: ' + req);
-        
-        res.sendFile(root + '/');
-        
-        res.originalUrl = '/';
-        console.log('response logger: ' + res);
     });
     
     // listen (start app with node server.js) ======================================

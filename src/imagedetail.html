@@ -4,7 +4,7 @@
         <h5 class="">${portfolioBook.subtitle}</h5>
         <p>${portfolioBook.description}</p>
         <div repeat.for="item of portfolioBook.items">
-            <div class="grid-item ${portfolioBook.class} ${portfolioBook.category}">
+            <div class="grid-item ${portfolioBook.class} ${portfolioBook.category}" style="margin:20px;">
                 <img src.bind="'/dist/images/fulls/' + item.imageURL" alt.bind="item.altText">
             </div>
         </div>
