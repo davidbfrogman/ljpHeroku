@@ -22,6 +22,7 @@
     var app      = express();                               // create our app w/ express
     var morgan   = require('morgan');             // log requests to the console (express4)
     var logger   = morgan('combined');
+    var rewrite  = require('express-urlrewrite');
     
     // set our port
     var port = process.env.PORT || 8080;
@@ -57,21 +58,20 @@
     app.use(express.static(root + '/images', {dotfiles : 'allow', maxAge: currentConfig.cacheLong, index: false} ));
     app.use(express.static(root + '/jspm_packages', {dotfiles : 'allow', maxAge: currentConfig.cacheLong, index: false} ));
     app.use(express.static(root + '/node_modules', {dotfiles : 'allow', maxAge: currentConfig.cacheLong, index: false} ));
-    
-     app.get('.*aspx', function (req, res) {
-        console.log('hit an aspx handling here');
-        res.orignalUrl = '';
-        res.sendFile(root + '/index.html/about');
-    });
-    
+   
     app.get('*', function(req, res, next) {
         if(req.originalUrl.indexOf('.aspx') > 0)
         {
             console.log('this was definitely an aspx page');
-            console.log('here is the original url: ' + req.originalUrl)
+            console.log('here is the original url: ' + req.originalUrl);
+            res.redirect(root + '/index.html');
+            req.originalUrl = '/about'
         }
-        console.log('hit catchall handling');
-        res.sendFile(root + '/index.html');
+        else
+        {
+           console.log('hit catchall handling');
+           res.sendFile(root + '/index.html');
+        }
     });
     
     app.get('*', function (req, res) {
