@@ -22,7 +22,6 @@
     var app      = express();                               // create our app w/ express
     var morgan   = require('morgan');             // log requests to the console (express4)
     var logger   = morgan('combined');
-    var rewrite  = require('express-urlrewrite');
     
     // set our port
     var port = process.env.PORT || 8080;
