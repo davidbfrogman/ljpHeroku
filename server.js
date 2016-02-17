@@ -23,8 +23,8 @@
         },
         prodConfig : {
             production : true,
-            cacheShort : '2d',
-            cacheLong : '7d',
+            cacheShort : '7d',
+            cacheLong : '14d',
             prerenderServiceURL: 'http://service.prerender.io', //This probably needs to change.
             rootUrl : 'http://' + prodDomain
         },
