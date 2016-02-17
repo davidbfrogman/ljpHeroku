@@ -31,7 +31,7 @@
     }
     
     //Get the correct config prod/dev
-    var currentConfig = process.env.prod ? config.prodConfig : config.devConfig;
+    var currentConfig = process.env.prod == 'true' ? config.prodConfig : config.devConfig;
     
     //This will be helpful on production when we want to force users to www version of my site.
     app.use( require('express-force-domain')(currentConfig.rootUrl) );
