@@ -71,7 +71,7 @@ export class dbpheader {
     
     shrinkHeroModule(height, offsetForImage){
         $('#hero').height(height);
-        if(this.mobileTest){
+        if(!this.mobileTest){
             //The 3 parameters here are ypos percentage, top offset in pixels, and speed.
             //default should be 175
             $('#hero.module-parallax').parallax('50%', offsetForImage, 0.4);
