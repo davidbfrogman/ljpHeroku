@@ -23,7 +23,7 @@
         },
         prodConfig : {
             production : true,
-            cacheShort : '7d',
+            cacheShort : '7d',  //So apparently google freaks out if the browser cache is less than 7 days. 
             cacheLong : '14d',
             prerenderServiceURL: 'http://service.prerender.io', //This probably needs to change.
             rootUrl : 'http://' + prodDomain
