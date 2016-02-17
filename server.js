@@ -64,13 +64,14 @@
         res.sendFile(root + '/index.html/about');
     });
     
-    app.get('*', function(request, response, next) {
-        if(request.originalUrl.indexOf('.aspx'))
+    app.get('*', function(req, res, next) {
+        if(req.originalUrl.indexOf('.aspx') > 0)
         {
             console.log('this was definitely an aspx page');
+            console.log('here is the original url: ' + req.originalUrl)
         }
         console.log('hit catchall handling');
-        response.sendFile(root + '/index.html');
+        res.sendFile(root + '/index.html');
     });
     
     app.get('*', function (req, res) {
