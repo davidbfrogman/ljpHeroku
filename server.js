@@ -23,7 +23,7 @@
         },
         prodConfig : {
             production : true,
-            cacheShort : '1d',
+            cacheShort : '2d',
             cacheLong : '7d',
             prerenderServiceURL: 'http://service.prerender.io', //This probably needs to change.
             rootUrl : 'http://' + prodDomain
@@ -53,11 +53,11 @@
     
     // compress all requests
     app.use(compression());
-    app.use(express.static(root, {dotfiles : 'allow', maxAge: currentConfig.cacheShort} ));
-    app.use(express.static(root + '/dist', {dotfiles : 'allow', maxAge: currentConfig.cacheShort, index: false} ));
-    app.use(express.static(root + '/images', {dotfiles : 'allow', maxAge: currentConfig.cacheLong, index: false} ));
-    app.use(express.static(root + '/jspm_packages', {dotfiles : 'allow', maxAge: currentConfig.cacheLong, index: false} ));
-    app.use(express.static(root + '/node_modules', {dotfiles : 'allow', maxAge: currentConfig.cacheLong, index: false} ));
+    app.use(express.static(root, { maxAge: currentConfig.cacheShort} ));
+    app.use(express.static(root + '/dist', { maxAge: currentConfig.cacheShort, index: false} ));
+    app.use(express.static(root + '/images', { maxAge: currentConfig.cacheLong, index: false} ));
+    app.use(express.static(root + '/jspm_packages', { maxAge: currentConfig.cacheLong, index: false} ));
+    app.use(express.static(root + '/node_modules', { maxAge: currentConfig.cacheLong, index: false} ));
    
     app.get('*', function(req, res, next) {
         if(req.originalUrl.indexOf('.aspx') > 0)
