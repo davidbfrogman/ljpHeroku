@@ -25,7 +25,6 @@ export class Portfolio {
         this.service = PortfolioManagerService;
         this.dbpheader = dbpheader;
         this.dbpUtility = dbpUtility;
-        this.heading = 'Denver Fashion Photographer';
     }
 
     //By putting this call here in the activate method.  
