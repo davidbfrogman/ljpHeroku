@@ -12,6 +12,7 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+
   map: {
     "aurelia-animator-css": "npm:aurelia-animator-css@1.0.0-beta.1.1.1",
     "aurelia-binding": "npm:aurelia-binding@1.0.0-beta.1.1.3",
@@ -20,6 +21,7 @@ System.config({
     "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.0-beta.1.1.1",
     "aurelia-fetch-client": "npm:aurelia-fetch-client@1.0.0-beta.1.1.0",
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.1.3",
+    "aurelia-google-analytics": "github:miguelzakharia/aurelia-google-analytics@1.0.3",
     "aurelia-history": "npm:aurelia-history@1.0.0-beta.1.1.1",
     "aurelia-history-browser": "npm:aurelia-history-browser@1.0.0-beta.1.1.2",
     "aurelia-loader": "npm:aurelia-loader@1.0.0-beta.1.1.1",
@@ -105,6 +107,11 @@ System.config({
     },
     "github:jspm/nodelibs-zlib@0.1.0": {
       "browserify-zlib": "npm:browserify-zlib@0.1.4"
+    },
+    "github:miguelzakharia/aurelia-google-analytics@1.0.3": {
+      "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0-beta.1.1.3",
+      "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.0-beta.1.1.1",
+      "aurelia-logging": "npm:aurelia-logging@1.0.0-beta.1.1.1"
     },
     "github:twbs/bootstrap@3.3.6": {
       "jquery": "github:components/jquery@2.2.0"
@@ -1071,4 +1078,4 @@ System.config({
       "window-size": "npm:window-size@0.1.0"
     }
   }
-})
+});
