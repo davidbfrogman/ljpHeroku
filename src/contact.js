@@ -14,6 +14,7 @@ export class contact {
         this.smoothscroll = smoothscroll;
         this.dbpConfig = dbpConfig;
         this.dbpUtility = dbpUtility;
+        this.heading = 'Contact Denver Fashion Photogrpaher';
                 
         this.http.configure(config => {
             config
@@ -36,9 +37,6 @@ export class contact {
         $('#contact-response').hide();
         this.smoothscroll.init();
         this.loadGoogleMap();
-        
-        document.title = "Denver Fashion Photographer || Contact Dave Brown Photography";
-
         
         this.dbpUtility.shrinkHeroModule();
         this.dbpUtility.scrollToTopOfPage();

@@ -20,8 +20,6 @@ export class about {
         this.dbpUtility.shrinkHeroModule();
         this.dbpUtility.scrollToTopOfPage();
         
-        document.title = "Denver Photographer || About";
-        
         this.drawCounters();
         this.drawOwlSliders();
         this.drawBackgrounds();
