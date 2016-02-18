@@ -1,6 +1,11 @@
 import 'bootstrap';
 
 export function configure(aurelia) {
+    
+    var trackerEnabled = true;
+    if(window.location.hostname.toLowerCase().indexOf('localhost') == 0){
+        trackerEnabled = false;
+    }
   aurelia.use
     .standardConfiguration()
     .developmentLogging()
@@ -8,10 +13,10 @@ export function configure(aurelia) {
             config.init('UA-9571004-2');
             config.attach({
                 logging: {
-                    enabled: true // Set to `true` to have some log messages appear in the browser console.
+                    enabled: trackerEnabled // Set to `true` to have some log messages appear in the browser console.
                 },
                 pageTracking: {
-                    enabled: true // Set to `false` to disable in non-production environments.
+                    enabled: trackerEnabled // Set to `false` to disable in non-production environments.
                 },
                 clickTracking: {
                     enabled: true // Set to `false` to disable in non-production environments.
