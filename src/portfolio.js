@@ -86,6 +86,7 @@ export class Portfolio {
             .done((instance) => {
                 //build out the isotope instance
                 self.buildIsotope();
+                self.isotopeInstance.arrange({ filter: self.currentFilter });
             })
             .progress((instance, image) => {
                 //TODO: Figure out how to relayout the isotope instance
