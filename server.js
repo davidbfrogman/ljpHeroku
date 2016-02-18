@@ -34,7 +34,7 @@
     var currentConfig = process.env.prod == 'true' ? config.prodConfig : config.devConfig;
     
     //This will be helpful on production when we want to force users to www version of my site.
-    app.use( require('express-force-domain')(currentConfig.rootUrl) );
+    //app.use( require('express-force-domain')(currentConfig.rootUrl) );
     
     app.use(favicon(__dirname + '/favicon.ico'));
     
@@ -53,13 +53,15 @@
     
     // compress all requests
     app.use(compression());
-    app.use(express.static(root, { maxAge: currentConfig.cacheShort} ));
-    app.use(express.static(root + '/dist', { maxAge: currentConfig.cacheShort, index: false} ));
-    app.use(express.static(root + '/images', { maxAge: currentConfig.cacheLong, index: false} ));
-    app.use(express.static(root + '/jspm_packages', { maxAge: currentConfig.cacheLong, index: false} ));
-    app.use(express.static(root + '/node_modules', { maxAge: currentConfig.cacheLong, index: false} ));
+    app.use(express.static(root, { dotfiles: 'allow', maxAge: currentConfig.cacheShort} ));
+    app.use(express.static(root + '/dist', { dotfiles: 'allow', maxAge: currentConfig.cacheShort, index: false} ));
+    app.use(express.static(root + '/images', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
+    app.use(express.static(root + '/jspm_packages', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
+    app.use(express.static(root + '/node_modules', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
    
     app.get('*', function(req, res, next) {
+        console.log('OriginalUrl for the request: ' + req.originalUrl);
+        console.log('Index of about: ' + req.originalUrl.toLowerCase().indexOf('about'));
         if(req.originalUrl.indexOf('.aspx') > 0)
         {
             console.log('Handling Redirection for ASPX Page');
@@ -69,22 +71,24 @@
             console.log(req.hostname);
             
             //Mobile Redirection
-            if(req.hostname.toLowerCase().indexOf('m.davebrownphotography.com') > 0 ){ 
+            if(req.hostname.toLowerCase().indexOf('m.davebrownphotography.com') >= 0 ){ 
+                console.log('Redirection for Mobile');
                  res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
             }
-            if(req.originalUrl.toLowerCase().indexOf('about') > 0){
-                
+            else if(req.originalUrl.toLowerCase().indexOf('about') >= 0){
+                console.log('Redirection for About');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/about' } });
             }
-            if(req.originalUrl.toLowerCase().indexOf('contact') > 0){
-                
+            else if(req.originalUrl.toLowerCase().indexOf('contact') >= 0){
+                console.log('Redirection for Contact');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/contact' } });
             }
-            if(req.originalUrl.toLowerCase().indexOf('faq') > 0 ){
-                
+            else if(req.originalUrl.toLowerCase().indexOf('faq') >= 0 ){
+                console.log('Redirection for faq');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/faq' } });
             }
             else{  
+                console.log('Redirection for everything else');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } }); 
             } 
         }

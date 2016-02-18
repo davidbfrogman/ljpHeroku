@@ -65,6 +65,8 @@ export class Portfolio {
         this.portfolioGrid = $('#portfolio-grid');
         this.isotopeBuilt = false;
         var self = this;
+        
+        document.title = "Denver Fashion Photographer || Portfolio";
        
         this.dbpUtility.scrollToTopOfPage();
     

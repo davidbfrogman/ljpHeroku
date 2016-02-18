@@ -10,6 +10,8 @@ export class faq {
     
     attached()
     {
+        document.title = "Denver Fashion Photographer || FAQ";
+        
         this.dbpUtility.shrinkHeroModule();
         this.dbpUtility.scrollToTopOfPage();
     }
