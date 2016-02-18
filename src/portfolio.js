@@ -85,7 +85,6 @@ export class Portfolio {
         this.worksgrid.imagesLoaded()
             .done((instance) => {
                 //build out the isotope instance
-                self.buildIsotope();
                 self.isotopeInstance.arrange({ filter: self.currentFilter });
             })
             .progress((instance, image) => {
