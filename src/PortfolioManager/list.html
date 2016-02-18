@@ -31,7 +31,7 @@
                             <td><a href="#" click.delegate="$parent.navigateToEdit(portfolioBook)">${portfolioBook.id}</a></td>
                             <td><input type="checkbox" checked.bind="portfolioBook.isActive" change.delegate="updatePortfolioBook(portfolioBook)" /></td>
                             <td><input type="checkbox" checked.bind="portfolioBook.isSingle" change.delegate="updatePortfolioBook(portfolioBook)" /></td>
-                            <td><a href="#" click.delegate="$parent.navigateToEdit(portfolioBook)"><img style="max-width:none;width:auto; height:40%;" src.bind="'/dist/images/thumbs/' + portfolioBook.imageThumbnailURL" /></a></td>
+                            <td><a href="#" click.delegate="$parent.navigateToEdit(portfolioBook)"><img style="max-width:none;width:auto; height:40%;" src.bind="'/images/thumbs/' + portfolioBook.imageThumbnailURL" /></a></td>
                             <td><select value.bind="portfolioBook.category" style="width:150px">
                                     <option/>
                                     <option>Fashion</option>
