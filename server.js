@@ -10,7 +10,7 @@
     var logger   = morgan('combined');
     var favicon  = require('serve-favicon');
     var port     = process.env.PORT || 8080;        // set our port
-    var prodDomain = 'dbpspa.herokuapp.com';       //change this whenever we setup our cname
+    var prodDomain = 'www.davebrownphotography.com';       //change this whenever we setup our cname
     
     // configuration =================
     var config = {

@@ -17,8 +17,9 @@ export class App {
 
         // This will remove the hash from the url so we don't have those bad SEO problems
         config.options.pushState = true;
+        
+        //I'm only going to show the port manager on localhost. Otherwise turn it off.        
         var showPortManInNav = false;
-        console.log(window.location.hostname);
         if(window.location.hostname.toLowerCase().indexOf('localhost') == 0){
             showPortManInNav = true;
         }
