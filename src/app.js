@@ -17,13 +17,19 @@ export class App {
 
         // This will remove the hash from the url so we don't have those bad SEO problems
         config.options.pushState = true;
+        var showPortManInNav = false;
+        console.log(window.location.hostname);
+        if(window.location.hostname.toLowerCase().indexOf('localhost') == 0){
+            showPortManInNav = true;
+        }
 
         config.map([
             { route: ['portfolio', ''], name: 'portfolio', moduleId: 'portfolio', nav: true, title: 'Portfolio' },
             { route: ['about'], name: 'about', moduleId: 'about', nav: true, title: 'About' },
             { route: ['faq'], name: 'faq', moduleId: 'faq', nav: true, title: 'FAQ' },
             { route: ['contact'], name: 'contact', moduleId: 'contact', nav: true, title: 'Contact' },
-            { route: ['portfolioManager'], name: 'portfolioManager', moduleId: './PortfolioManager/index', nav: false, title: 'Port Manager' },
+
+            { route: ['portfolioManager'], name: 'portfolioManager', moduleId: './PortfolioManager/index', nav: showPortManInNav, title: 'Port Manager' },
             { route: ['imagedetail'], name: 'imagedetail', moduleId: 'imagedetail', nav: false, title: 'Portfolio Item Image Detail' }
         ]).mapUnknownRoutes('portfolio', 'portfolio');
         
