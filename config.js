@@ -12,7 +12,6 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
-
   map: {
     "aurelia-animator-css": "npm:aurelia-animator-css@1.0.0-beta.1.1.1",
     "aurelia-binding": "npm:aurelia-binding@1.0.0-beta.1.1.3",
@@ -1078,4 +1077,4 @@ System.config({
       "window-size": "npm:window-size@0.1.0"
     }
   }
-});
+})
