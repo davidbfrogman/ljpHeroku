@@ -66,6 +66,11 @@
                 console.log('Redirection for Mobile');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
         }
+        if(req.originalUrl.indexOf('Portfolio/Denver') > 0){
+                res.status(301);
+                console.log('Redirection for Mobile old portfolios');
+                res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
+        }
         //Old Site redirection
         if(req.originalUrl.indexOf('.aspx') > 0)
         {
