@@ -62,20 +62,22 @@
     app.get('*', function(req, res, next) {
         console.log('OriginalUrl for the request: ' + req.originalUrl);
         console.log('Index of about: ' + req.originalUrl.toLowerCase().indexOf('about'));
-        if(req.originalUrl.indexOf('.aspx') > 0)
+        
+        //Mobile Redirection
+        if(req.hostname.toLowerCase().indexOf('m.davebrownphotography.com') >= 0 ){ 
+            console.log('Redirection for Mobile');
+                res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
+        }
+        //Old Site redirection
+        else if(req.originalUrl.indexOf('.aspx') > 0)
         {
             console.log('Handling Redirection for ASPX Page');
             console.log('Heres the original URL for matching aspx page: ' + req.originalUrl);
             console.log('Heres the req.hostname: ' + req.hostname);
             res.status(301);
             console.log(req.hostname);
-            
-            //Mobile Redirection
-            if(req.hostname.toLowerCase().indexOf('m.davebrownphotography.com') >= 0 ){ 
-                console.log('Redirection for Mobile');
-                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
-            }
-            else if(req.originalUrl.toLowerCase().indexOf('about') >= 0){
+
+            if(req.originalUrl.toLowerCase().indexOf('about') >= 0){
                 console.log('Redirection for About');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/about' } });
             }
@@ -93,7 +95,7 @@
             } 
         }
         //Redirect my old blog location.
-        if(req.originalUrl.toLowerCase().indexOf('bloginstall') > 0){
+        else if(req.originalUrl.toLowerCase().indexOf('bloginstall') > 0){
                 
             var cleaned = req.originalUrl.toLowerCase();
             

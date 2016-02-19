@@ -13,13 +13,13 @@ export function configure(aurelia) {
             config.init('UA-9571004-2');
             config.attach({
                 logging: {
-                    enabled: trackerEnabled // Set to `true` to have some log messages appear in the browser console.
+                    enabled: true // Set to `true` to have some log messages appear in the browser console.
                 },
                 pageTracking: {
                     enabled: trackerEnabled // Set to `false` to disable in non-production environments.
                 },
                 clickTracking: {
-                    enabled: true // Set to `false` to disable in non-production environments.
+                    enabled: trackerEnabled // Set to `false` to disable in non-production environments.
                 }
         })
     });
