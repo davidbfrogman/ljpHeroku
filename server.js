@@ -61,15 +61,9 @@
    
     app.get('*', function(req, res, next) {
         console.log('OriginalUrl for the request: ' + req.originalUrl);
-        console.log('Index of about: ' + req.originalUrl.toLowerCase().indexOf('about'));
-        
-        //Mobile Redirection
-        if(req.hostname.toLowerCase().indexOf('m.davebrownphotography.com') >= 0 ){ 
-            console.log('Redirection for Mobile');
-                res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
-        }
+
         //Old Site redirection
-        else if(req.originalUrl.indexOf('.aspx') > 0)
+        if(req.originalUrl.indexOf('.aspx') > 0)
         {
             console.log('Handling Redirection for ASPX Page');
             console.log('Heres the original URL for matching aspx page: ' + req.originalUrl);
@@ -94,11 +88,16 @@
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } }); 
             } 
         }
+        //Mobile Redirection
+        else if(req.hostname.toLowerCase().indexOf('m.davebrownphotography.com') >= 0 ){ 
+            res.status(301);
+            console.log('Redirection for Mobile');
+            res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
+        }
         //Redirect my old blog location.
         else if(req.originalUrl.toLowerCase().indexOf('bloginstall') > 0){
-                
+            res.status(301);    
             var cleaned = req.originalUrl.toLowerCase();
-            
             cleaned = cleaned.replace('/bloginstall','');
             console.log('Cleaned Blog URL:' + cleaned);
             res.redirect(301, 'http://blog.davebrownphotography.com' + cleaned);
