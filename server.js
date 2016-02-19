@@ -34,7 +34,7 @@
     var currentConfig = process.env.prod == 'true' ? config.prodConfig : config.devConfig;
     
     //This will be helpful on production when we want to force users to www version of my site.
-    //app.use( require('express-force-domain')(currentConfig.rootUrl) );
+    app.use( require('express-force-domain')(currentConfig.rootUrl) );
     
     app.use(favicon(__dirname + '/favicon.ico'));
     
@@ -49,8 +49,6 @@
                                                      
     app.use(require('prerender-node').set('prerenderServiceUrl', currentConfig.prerenderServiceURL));
     
-    console.log(__dirname);
-    
     // compress all requests
     app.use(compression());
     app.use(express.static(root, { dotfiles: 'allow', maxAge: currentConfig.cacheShort} ));
@@ -61,7 +59,13 @@
    
     app.get('*', function(req, res, next) {
         console.log('OriginalUrl for the request: ' + req.originalUrl);
-
+        
+        //Mobile Redirection
+        if(req.hostname.toLowerCase().indexOf('m.davebrownphotography.com') >= 0 ){ 
+                res.status(301);
+                console.log('Redirection for Mobile');
+                res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
+        }
         //Old Site redirection
         if(req.originalUrl.indexOf('.aspx') > 0)
         {
@@ -87,12 +91,6 @@
                 console.log('Redirection for everything else');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } }); 
             } 
-        }
-        //Mobile Redirection
-        else if(req.hostname.toLowerCase().indexOf('m.davebrownphotography.com') >= 0 ){ 
-            res.status(301);
-            console.log('Redirection for Mobile');
-            res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
         }
         //Redirect my old blog location.
         else if(req.originalUrl.toLowerCase().indexOf('bloginstall') > 0){
