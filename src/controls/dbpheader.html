@@ -1,5 +1,5 @@
 <template>
-    <section id="hero" class="module-hero module-parallax module-full-height bg-light-30" data-background="/dist/images/hero/hero1.jpg">
+    <section id="hero" class="module-hero module-parallax module-full-height bg-light-30" data-background="/dist/images/hero/hero1.jpg" style="background-image: url(/dist/images/hero/hero1.jpg)">
 
         <!-- HERO TEXT -->
         <div class="hero-caption">
@@ -11,10 +11,11 @@
                         Denver. Tokyo. New York.
                     </h6>
                 </div>
-                </div>
+            </div>
+            <div class="mouse-icon" click.delegate="scrollDownForDumbUser()" style="cursor:pointer">
+                <div class="wheel"></div>
             </div>
         </div>
         <!-- /HERO TEXT -->
-
     </section>
 </template>
