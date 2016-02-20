@@ -1218,18 +1218,57 @@ Navigation
 	color: #666;
 }
 
+.down-triangle-wrapper{
+    position: absolute;
+	left: 50%;
+	bottom: 45px;
+    margin-left: -5px;
+	z-index: 10;
+}
+
 .down-triangle {
     position: absolute;
 	left: 50%;
 	bottom: 30px;
 	display: none;
-    margin-left: -5px;
 	z-index: 10;
     border-right: 1px solid #666; 
     border-bottom: 1px solid #666; 
     width: 10px; height: 10px;
     transform: rotate(45deg);
 }
+
+.triangle-bounce{
+    -webkit-animation-name: drop;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-play-state: running;
+	animation-name: drop;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+
+/*@keyframes triangle-bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes triangle-bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}*/
 
 .mouse-icon {
 	position: absolute;
