@@ -1218,6 +1218,19 @@ Navigation
 	color: #666;
 }
 
+.down-triangle {
+    position: absolute;
+	left: 50%;
+	bottom: 30px;
+	display: none;
+    margin-left: -5px;
+	z-index: 10;
+    border-right: 1px solid #666; 
+    border-bottom: 1px solid #666; 
+    width: 10px; height: 10px;
+    transform: rotate(45deg);
+}
+
 .mouse-icon {
 	position: absolute;
 	left: 50%;
@@ -2096,6 +2109,10 @@ Responsive Media Querries
     .mouse-icon {
 		display: none;
 	}
+    
+    .down-triangle{
+        display: block;
+    }
 
 }
 
@@ -2150,10 +2167,10 @@ Responsive Media Querries
         visibility: hidden;
     }
     
+    /*Background attachment fixed sucks for mobiel apparently.*/
     .module-parallax{
-        background-attachment: fixed;
+        background-attachment: scroll;
     }
-
 }
 
 /* -------------------------------------------------------------------
