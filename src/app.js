@@ -13,7 +13,7 @@ export class App {
     configureRouter(config, router) {
 
         //This title string gets appended to the Title field that's below in the config.map
-        config.title = 'Dave Brown // Photographer';
+        config.title = 'Denver Photographer | Fashion | Headshots | Editorial | Advertising';
 
         // This will remove the hash from the url so we don't have those bad SEO problems
         config.options.pushState = true;
@@ -23,9 +23,8 @@ export class App {
             { route: ['about'], name: 'about', moduleId: 'about', nav: true, title: 'About' },
             { route: ['faq'], name: 'faq', moduleId: 'faq', nav: true, title: 'FAQ' },
             { route: ['contact'], name: 'contact', moduleId: 'contact', nav: true, title: 'Contact' },
-            { route: ['portfolioDetail'], name: 'portfolioDetail', moduleId: 'portfolioDetail', nav: false, title: 'portfolioDetail' },
             { route: ['portfolioManager'], name: 'portfolioManager', moduleId: './PortfolioManager/index', nav: false, title: 'Port Manager' },
-            { route: ['imagedetail'], name: 'imagedetail', moduleId: 'imagedetail', nav: false, title: 'Portfolio Item Image Detail' }
+            { route: ['imagedetail'], name: 'imagedetail', moduleId: 'imagedetail', nav: false, title: 'Detail' }
         ]).mapUnknownRoutes('portfolio', 'portfolio');
         
         this.router = router;

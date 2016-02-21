@@ -13,7 +13,7 @@ import PhotoSwipeUI_Default from 'npm:photoswipe@4.1.1/dist/photoswipe-ui-defaul
 
 @inject(HttpClient, PortfolioManagerService, dbpheader, dbpUtility)
 export class Portfolio {
-    heading = 'Denver Fashion Photographer';
+    heading = 'Portfolio';
     portfolioBooks = [];
     isotopeInstance = {};
     portfolioCategories = [];
