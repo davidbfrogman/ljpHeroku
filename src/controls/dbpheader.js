@@ -11,6 +11,15 @@ export class dbpheader {
 	constructor(dbpParallax) {
 		this.dbpParallax = dbpParallax;
 	}
+    
+    scrollDownForDumbUser(){
+       if($(window).scrollTop() < 10)
+       {
+            $('html, body').animate({
+                scrollTop: 300
+            }, 1000);
+        }
+    }
 
 	attached() {
 		
@@ -78,5 +87,6 @@ export class dbpheader {
         }
         
         $('.hero-caption').fadeOut(500);
+        $('.mouse-icon').fadeOut(500);
     }
 }

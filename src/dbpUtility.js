@@ -17,6 +17,8 @@ export class dbpUtility {
         }
     }
     
+    
+    
     shrinkHeroModule(){
         this.dbpheader.shrinkHeroModule(350, 175);
     }

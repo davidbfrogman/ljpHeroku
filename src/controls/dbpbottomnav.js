@@ -6,7 +6,6 @@ export class dbpbottomnav {
     
     constructor(Router){
         this.router = Router;
-        console.log(this.router);
     }
     
     attached() {

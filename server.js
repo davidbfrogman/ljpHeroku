@@ -10,7 +10,7 @@
     var logger   = morgan('combined');
     var favicon  = require('serve-favicon');
     var port     = process.env.PORT || 8080;        // set our port
-    var prodDomain = 'dbpspa.herokuapp.com';       //change this whenever we setup our cname
+    var prodDomain = 'www.davebrownphotography.com';       //change this whenever we setup our cname
     
     // configuration =================
     var config = {
@@ -49,17 +49,29 @@
                                                      
     app.use(require('prerender-node').set('prerenderServiceUrl', currentConfig.prerenderServiceURL));
     
-    console.log(__dirname);
-    
     // compress all requests
     app.use(compression());
-    app.use(express.static(root, { maxAge: currentConfig.cacheShort} ));
-    app.use(express.static(root + '/dist', { maxAge: currentConfig.cacheShort, index: false} ));
-    app.use(express.static(root + '/images', { maxAge: currentConfig.cacheLong, index: false} ));
-    app.use(express.static(root + '/jspm_packages', { maxAge: currentConfig.cacheLong, index: false} ));
-    app.use(express.static(root + '/node_modules', { maxAge: currentConfig.cacheLong, index: false} ));
+    app.use(express.static(root, { dotfiles: 'allow', maxAge: currentConfig.cacheShort} ));
+    app.use(express.static(root + '/dist', { dotfiles: 'allow', maxAge: currentConfig.cacheShort, index: false} ));
+    app.use(express.static(root + '/images', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
+    app.use(express.static(root + '/jspm_packages', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
+    app.use(express.static(root + '/node_modules', { dotfiles: 'allow', maxAge: currentConfig.cacheLong, index: false} ));
    
     app.get('*', function(req, res, next) {
+        console.log('OriginalUrl for the request: ' + req.originalUrl);
+        
+        //Mobile Redirection
+        if(req.hostname.toLowerCase().indexOf('m.davebrownphotography.com') >= 0 ){ 
+                res.status(301);
+                console.log('Redirection for Mobile');
+                res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
+        }
+        if(req.originalUrl.indexOf('Portfolio/Denver') > 0){
+                res.status(301);
+                console.log('Redirection for Mobile old portfolios');
+                res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
+        }
+        //Old Site redirection
         if(req.originalUrl.indexOf('.aspx') > 0)
         {
             console.log('Handling Redirection for ASPX Page');
@@ -67,32 +79,28 @@
             console.log('Heres the req.hostname: ' + req.hostname);
             res.status(301);
             console.log(req.hostname);
-            
-            //Mobile Redirection
-            if(req.hostname.toLowerCase().indexOf('m.davebrownphotography.com') > 0 ){ 
-                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
-            }
-            if(req.originalUrl.toLowerCase().indexOf('about') > 0){
-                
+
+            if(req.originalUrl.toLowerCase().indexOf('about') >= 0){
+                console.log('Redirection for About');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/about' } });
             }
-            if(req.originalUrl.toLowerCase().indexOf('contact') > 0){
-                
+            else if(req.originalUrl.toLowerCase().indexOf('contact') >= 0){
+                console.log('Redirection for Contact');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/contact' } });
             }
-            if(req.originalUrl.toLowerCase().indexOf('faq') > 0 ){
-                
+            else if(req.originalUrl.toLowerCase().indexOf('faq') >= 0 ){
+                console.log('Redirection for faq');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/faq' } });
             }
             else{  
+                console.log('Redirection for everything else');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } }); 
             } 
         }
         //Redirect my old blog location.
-        if(req.originalUrl.toLowerCase().indexOf('bloginstall') > 0){
-                
+        else if(req.originalUrl.toLowerCase().indexOf('bloginstall') > 0){
+            res.status(301);    
             var cleaned = req.originalUrl.toLowerCase();
-            
             cleaned = cleaned.replace('/bloginstall','');
             console.log('Cleaned Blog URL:' + cleaned);
             res.redirect(301, 'http://blog.davebrownphotography.com' + cleaned);

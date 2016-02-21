@@ -9,7 +9,6 @@ export class dbpnavbar {
     
     constructor(Router){
         this.router = Router;
-        console.log(this.router);
     }
 
     showOverlayMenu() {
