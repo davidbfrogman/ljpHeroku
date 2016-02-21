@@ -35,15 +35,15 @@ export class PortfolioManagerService {
     }
 
     getGetPortfolioCategories() {
-        return this.http.fetch('GetPortfolioCategories')
+        return this.http.fetch('GetCachedPortfolioCategories')
             .then(response => response.json())
-            .then(portfolioBooks => this.portfolioBooks = portfolioBooks)
+            .then(portfolioCategories => this.portfolioCategories = portfolioCategories)
     }
 
     getPortfolioBooksForDisplay() {
         return this.http.fetch('GetCachedPortfolioBooks')
             .then(response => response.json())
-            .then(portfolioCategories => this.portfolioCategories = portfolioCategories)
+            .then(portfolioBooks => this.portfolioBooks = portfolioBooks)
     }
 
     save(portfolioBook) {
