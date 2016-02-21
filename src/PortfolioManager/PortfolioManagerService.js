@@ -41,7 +41,7 @@ export class PortfolioManagerService {
     }
 
     getPortfolioBooksForDisplay() {
-        return this.http.fetch('GetPortfolioBooksForDisplay')
+        return this.http.fetch('GetCachedPortfolioBooks')
             .then(response => response.json())
             .then(portfolioCategories => this.portfolioCategories = portfolioCategories)
     }
