@@ -108,6 +108,7 @@
         else
         {
            console.log('hit catchall handling not in an aspx page.');
+           console.log('Heres the root in the catchall: ' + root);
            res.sendFile(root + '/index.html');
         }
     });
