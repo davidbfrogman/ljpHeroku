@@ -20,6 +20,14 @@ export class dbpheader {
             }, 1000);
         }
     }
+    
+    get isMobile(){
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			return true;
+		} else {
+			return false;
+		}
+    }
 
 	attached() {
 		
@@ -31,11 +39,6 @@ export class dbpheader {
 			windowWidth = Math.max($(window).width(), window.innerWidth),
 			mobileTest
 
-		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-			mobileTest = true;
-		} else {
-			mobileTest = false;
-		}
 
 		modules.each(function () {
 			if ($(this).attr('data-background')) {
@@ -50,7 +53,7 @@ export class dbpheader {
 		/* ---------------------------------------------- /*
 		 * Parallax
 		/* ---------------------------------------------- */
-		if(!mobileTest)
+		if(!this.isMobile)
         {
             this.dbpParallax.init();
             $('#hero.module-parallax').parallax('50%', 40 , 0.4);
@@ -80,7 +83,7 @@ export class dbpheader {
     
     shrinkHeroModule(height, offsetForImage){
         $('#hero').height(height);
-        if(!this.mobileTest){
+        if(!this.isMobile){
             //The 3 parameters here are ypos percentage, top offset in pixels, and speed.
             //default should be 175
             $('#hero.module-parallax').parallax('50%', offsetForImage, 0.4);
