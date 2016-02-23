@@ -21,7 +21,7 @@ export class dbpUtility {
        if($(window).scrollTop() > 20)
        {
            if(this.isMobile){
-               window.scrollTo(0,50);
+               $('body').scrollTop(0);
            }
             else{
                $('html, body').animate({
