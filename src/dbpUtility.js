@@ -7,17 +7,29 @@ export class dbpUtility {
         this.dbpheader = dbpheader;
     };
     
+    get isMobile(){
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			return true;
+		} else {
+			return false;
+		}
+    }
+
+    
     scrollToTopOfPage()
     {
        if($(window).scrollTop() > 20)
        {
-            $('html, body').animate({
-                scrollTop: 0
-            }, 1000);
+           if(this.isMobile){
+               window.scrollTo(0,50);
+           }
+            else{
+               $('html, body').animate({
+                  scrollTop: 0
+               }, 1000);
+            }
         }
     }
-    
-    
     
     shrinkHeroModule(){
         this.dbpheader.shrinkHeroModule(350, 175);
