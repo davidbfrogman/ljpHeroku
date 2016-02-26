@@ -31,7 +31,7 @@ export class App {
             { route: ['contact'], name: 'contact', moduleId: 'contact', nav: true, title: 'Contact' },
             { route: ['portfolioManager'], name: 'portfolioManager', moduleId: './PortfolioManager/index', nav: showPortManInNav, title: 'Port Manager' },
             { route: ['imagedetail'], name: 'imagedetail', moduleId: 'imagedetail', nav: false, title: 'Portfolio Item Image Detail' },
-            { route: ['*-*/:id'], name: 'imagedetail', moduleId: 'imagedetail', nav: false, title: 'Portfolio Item Image Detail' }
+            { route: ['pd/:detailname/:id'], name: 'imagedetail', moduleId: 'imagedetail', nav: false, title: 'Photography' }
         ]).mapUnknownRoutes('portfolio', 'portfolio');
         
         this.router = router;
