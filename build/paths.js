@@ -10,6 +10,8 @@ module.exports = {
   styles: appRoot + '**/*.css',
   content: appRoot + '**/*.png',
   imagesIn: './images/**/*.jpg',
+  imagesFulls: './images/fulls/*.jpg',
+  imagesThumbs: './images/thumbs/',
   imagesOut: outputRoot + '/images/',
   output: outputRoot,
   exportSrv: exporSrvtRoot,

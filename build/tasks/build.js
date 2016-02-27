@@ -11,6 +11,8 @@ var assign = Object.assign || require('object.assign');
 var notify = require("gulp-notify");
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var gulpSharp = require('gulp-sharp');
+//resize to 265px
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
@@ -57,6 +59,15 @@ gulp.task('build-content', function() {
     .pipe(gulp.dest(paths.output));
 });
 
+gulp.task('generate-thumbnails', function(){
+  return gulp.src( paths.imagesFulls )
+    .pipe(debug({title: 'Resizing: '}))  
+    .pipe(gulpSharp({
+      resize : [265],
+    }))
+    .pipe(gulp.dest(paths.imagesThumbs));
+});
+
 gulp.task('copy-images', function() {
   return gulp.src(paths.imagesIn)
     .pipe(changed(paths.imagesOut, {extension: '.jpg'}))
@@ -65,20 +76,13 @@ gulp.task('copy-images', function() {
 
 gulp.task('optimize-images', () => {
 	return gulp.src(paths.imagesIn)
-        .pipe(debug())
+        .pipe(debug({title: 'Optimizing Image: '}))
 		.pipe(imagemin({
 			progressive: true,
 			svgoPlugins: [{removeViewBox: false}],
 			use: [pngquant()]
 		}))
 		.pipe(gulp.dest(paths.imagesOut));
-});
-
-gulp.task('run-image-optimization', function(callback) {
-  return runSequence(
-    ['optimize-images'],
-    callback
-  );
 });
 
 // this task calls the clean task (located
@@ -88,7 +92,7 @@ gulp.task('run-image-optimization', function(callback) {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-system', 'build-html', 'build-css-styles','build-content', 'copy-images'],
+    ['build-system', 'build-html', 'build-css-styles','build-content' , 'copy-images'],
     callback
   );
 });
