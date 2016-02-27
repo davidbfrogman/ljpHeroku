@@ -12,7 +12,6 @@ var notify = require("gulp-notify");
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var gulpSharp = require('gulp-sharp');
-//resize to 265px
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused

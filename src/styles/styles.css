@@ -60,10 +60,10 @@ Transition elsements
 a,
 .btn,
 .navbar a {
-	-webkit-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	   -moz-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	     -o-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	        transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	-webkit-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	   -moz-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	     -o-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	        transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 
 /*.overlay-menu {
@@ -210,10 +210,10 @@ Forms
 	    -ms-border-radius: 2px;
 	     -o-border-radius: 2px;
 	        border-radius: 2px;
-	-webkit-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	   -moz-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	     -o-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	        transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	-webkit-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	   -moz-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	     -o-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	        transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 
 .form-control:focus {
@@ -759,10 +759,10 @@ Gallery box
 	height: 100%;
 	width: 100%;
 	opacity: 0;
-	-webkit-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	   -moz-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	     -o-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	        transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	-webkit-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	   -moz-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	     -o-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	        transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 
 .gallery-box:hover .gallery:after {
@@ -789,10 +789,10 @@ Team
 }
 
 .team-image > img {
-	-webkit-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	   -moz-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	     -o-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	        transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	-webkit-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	   -moz-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	     -o-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	        transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 
 .team-detail {
@@ -804,10 +804,10 @@ Team
 	-webkit-transform: translateY(50%);
 	   -moz-transform: translateY(50%);
 	        transform: translateY(50%);
-	-webkit-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	   -moz-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	     -o-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	        transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	-webkit-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	   -moz-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	     -o-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	        transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 
 .team-item:hover .team-detail {
@@ -848,10 +848,10 @@ Client logos
 	border-right: 1px solid #eee;
 	padding: 0;
 	text-align: center;
-	-webkit-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	   -moz-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	     -o-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	        transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	-webkit-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	   -moz-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	     -o-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	        transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 
 .client-item a {
@@ -988,10 +988,10 @@ Navigation
 ------------------------------------------------------------------- */
 
 .navbar-custom {
-	-webkit-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	   -moz-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	     -o-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	        transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	-webkit-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	   -moz-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	     -o-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	        transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 
 .navbar-custom {
@@ -1240,13 +1240,13 @@ Navigation
 
 .triangle-bounce{
     -webkit-animation-name: drop;
-	-webkit-animation-duration: 1s;
+	-webkit-animation-duration: .5s;
 	-webkit-animation-timing-function: linear;
 	-webkit-animation-delay: 0s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-play-state: running;
 	animation-name: drop;
-	animation-duration: 1s;
+	animation-duration: .5s;
 	animation-timing-function: linear;
 	animation-delay: 0s;
 	animation-iteration-count: infinite;
@@ -1511,10 +1511,10 @@ Works item
 	left: 0;
 	width: 100%;
 	height: 100%;
-	-webkit-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	   -moz-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	     -o-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	        transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	-webkit-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	   -moz-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	     -o-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	        transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 
 .work-item img {
@@ -1533,10 +1533,10 @@ Works item
 	padding: 20px;
 	z-index: 3;
 	text-align: center;
-	-webkit-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	   -moz-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	     -o-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	        transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	-webkit-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	   -moz-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	     -o-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	        transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 
 .work-title {
@@ -1689,10 +1689,10 @@ Blog
 	height: 100%;
 	width: 100%;
 	opacity: 0;
-	-webkit-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	   -moz-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	     -o-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	        transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	-webkit-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	   -moz-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	     -o-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	        transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 
 .post-media:hover a:after {
@@ -1749,10 +1749,10 @@ Tags
 	-webkit-border-radius: 2px 0 0 2px;
 	   -moz-border-radius: 2px 0 0 2px;
 	        border-radius: 2px 0 0 2px;
-	-webkit-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	   -moz-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	     -o-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	        transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	-webkit-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	   -moz-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	     -o-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	        transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 
 .tags a:before {
@@ -1765,10 +1765,10 @@ Tags
 	top: 0;
 	height: 0;
 	width: 0;
-	-webkit-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	   -moz-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	     -o-transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-	        transition: all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	-webkit-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	   -moz-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	     -o-transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+	        transition: all 0.25s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
 
 .tags a:after {
