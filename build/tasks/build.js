@@ -63,6 +63,7 @@ gulp.task('generate-thumbnails', function(){
     .pipe(debug({title: 'Resizing: '}))  
     .pipe(gulpSharp({
       resize : [265],
+      quality : 80, //I really tried to go below 80, which is the default, but it really looks like shit otherwise.
     }))
     .pipe(gulp.dest(paths.imagesThumbs));
 });
