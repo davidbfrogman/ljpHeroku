@@ -39,7 +39,7 @@ export class dbpnavbar {
         this.navbarCheck(navbar);
 
         $(window).scroll(function () {
-            this.navbarAnimation(navbar);
+            self.navbarAnimation(navbar);
         }).scroll();
 
         $(window).keydown(function (e) {
