@@ -3,15 +3,17 @@ import {dbpUtility} from 'dbpUtility';
 import {smoothscroll} from './3rdParty/smoothscroll';
 import  './3rdParty/appear.js';
 import  './3rdParty/owl.carousel.js';
+import {reviewsdata} from 'reviewsdata.js';
 
 
-@inject(smoothscroll, dbpUtility)
+@inject(smoothscroll, dbpUtility, reviewsdata)
 export class about {
     
-    constructor(smoothscroll, dbpUtility) {
+    constructor(smoothscroll, dbpUtility, reviewsdata) {
         this.heading = 'About';
         this.smoothscroll = smoothscroll;
         this.dbpUtility = dbpUtility;
+        this.reviewsList = reviewsdata.currentReviews.reviews;
     };
     
     attached()
@@ -37,7 +39,7 @@ export class about {
 		$('.slider-testimonials').owlCarousel({
             center:true,
             loop:true,
-            margin:10,
+            margin:30,
             autoplay:true,
             autoplayTimeout:5000,
             autoplayHoverPause:true,
