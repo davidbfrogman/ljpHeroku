@@ -98,10 +98,10 @@
                                     <td><input type="text" value.bind="portfolioItem.altText" /></td>
                                     <td><input type="text" value.bind="portfolioItem.width" /></td>
                                     <td><input type="text" value.bind="portfolioItem.height" /></td>
-                                    <td><a href="#" click.delegate="$parent.deletePortfolioItem(portfolioItem)"><i class="ion-trash-b"></i></a></td>
+                                    <td><a href="#" click.delegate="deletePortfolioItem(portfolioItem)"><i class="ion-trash-b"></i></a></td>
                                 </tr>
                                 <tr>
-                                   <td><a href="#" click.delegate="$parent.addEmptyPortfolioItem(portfolioBook,null,null)"><i class="ion-ios-plus"></i></a></td>
+                                   <td><a click.delegate="addEmptyPortfolioItem(portfolioBook,null,99)"><i class="ion-ios-plus"></i></a></td>
                                 </tr>
                             </tbody>
                         </table>
