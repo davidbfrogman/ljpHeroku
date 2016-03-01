@@ -3,10 +3,8 @@
 export class smoothscroll {
     init() {
 
-        console.log('About to start loading smoothscroll');
         // Do not initialize smoothScroll when running server side, handle it in client:
         if (typeof window !== 'object'){return;}
-            console.log('Window reference in smoothscroll worked out.')
 
         // We do not want this script to be applied in browsers that do not support those
         // That means no smoothscroll on IE9 and below.
@@ -90,11 +88,8 @@ export class smoothscroll {
         }
 
         // We look for all the internal links in the documents and attach the smoothscroll function
-        console.log('were inside the dom content loaded event');
         var internal = document.querySelectorAll('a[href^="#"]:not([href="#"])'), a;
         for (var i = internal.length; a = internal[--i];) {
-            console.log('We have some links were going to smooth scroll');
-            console.log(a);
             a.addEventListener("click", linkHandler, false);
         }
     }

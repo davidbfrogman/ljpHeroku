@@ -6,8 +6,8 @@ export class dbpnavbar {
 
     overlayMenu = {};
     navbatTrans = {};
-    
-    constructor(Router){
+
+    constructor(Router) {
         this.router = Router;
     }
 
@@ -20,8 +20,8 @@ export class dbpnavbar {
         this.overlayMenu.fadeOut(300);
         $('body').removeClass('aux-navigation-active');
     }
-    
-    navigateToBlog(){
+
+    navigateToBlog() {
         this.hideOverlayMenu();
         window.open('http://blog.davebrownphotography.com', '_blank');
     }
@@ -39,19 +39,8 @@ export class dbpnavbar {
         this.navbarCheck(navbar);
 
         $(window).scroll(function () {
-            navbarAnimation(navbar);
+            self.navbarAnimation(navbar);
         }).scroll();
-
-        function navbarAnimation(navbar) {
-            var topScroll = $(window).scrollTop();
-            if (navbar.length > 0 && self.navbatTrans !== false) {
-                if (topScroll >= 5) {
-                    navbar.removeClass('navbar-transparent');
-                } else {
-                    navbar.addClass('navbar-transparent');
-                }
-            }
-        }
 
         $(window).keydown(function (e) {
             if (e.which === 27) {
@@ -89,12 +78,23 @@ export class dbpnavbar {
             e.preventDefault();
         });
     }
-    
-    navbarCheck(navbar){
-         if (navbar.length > 0 && navbar.hasClass('navbar-transparent')) {
-                this.navbatTrans = true;
+
+    navbarAnimation(navbar) {
+        var topScroll = $(window).scrollTop();
+        if (navbar.length > 0 && self.navbatTrans !== false) {
+            if (topScroll >= 5) {
+                navbar.removeClass('navbar-transparent');
             } else {
-                this.navbatTrans = false;
+                navbar.addClass('navbar-transparent');
             }
+        }
+    }
+
+    navbarCheck(navbar) {
+        if (navbar.length > 0 && navbar.hasClass('navbar-transparent')) {
+            this.navbatTrans = true;
+        } else {
+            this.navbatTrans = false;
+        }
     }
 }

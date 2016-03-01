@@ -245,79 +245,27 @@
 
             <div class="row">
 
-                <div class="col-sm-6 col-sm-offset-3">
+                <div class="col-sm-12">
 
                     <!-- TESTIMONIALS CAROUSEL -->
                     <div class="owl-carousel owl-theme slider-testimonials text-center owl-container" style="">
-
+                        
                         <!-- SLIDE 1 -->
-                        <div class="item">
+                        <div class="item" repeat.for="review of reviewsList">
                             <h5 class="m-b-20 quote-icon">
 									<i class="ion-ios-chatboxes-outline"></i>
 								</h5>
                             <div class="font-serif m-b-20">
-                               Incredible. Dave is impeccably talented at what he does. I came to Dave wanting some high quality & beautiful photos to use for my website and I was not disappointed. I will admit, I was super nervous getting in front of a camera(I'm a musician, not a model) so of course I was feeling self-conscious, but Dave was super honest with me about posing(highly appreciated), he told me what sorts of poses look best, but most importantly he let me be myself, and I absolutely fell in love with the photos he took.
+                               ${review.content}
                             </div>
-                            <div class="quote-author font-alt">Hailey / Elora Zamora Musician</div>
+                            <div class="quote-author font-alt">${review.name}</div>
                         </div>
                         <!-- /SLIDE 1 -->
-
-                        <!-- SLIDE 2 -->
-                        <div class="item">
-                            <h5 class="m-b-20 quote-icon">
-									<i class="ion-ios-chatboxes-outline"></i>
-								</h5>
-                            <div class="font-serif m-b-20">
-                                If you're serious and you want some truly kick ass photographs, book Dave Brown Photography. You won't be disappointed.
-                            </div>
-                            <div class="quote-author font-alt">Brett / Remax Denver</div>
-                        </div>
-                        <!-- /SLIDE 2 -->
-
-                        <!-- SLIDE 3 -->
-                        <div class="item">
-                            <h5 class="m-b-20 quote-icon">
-									<i class="ion-ios-chatboxes-outline"></i>
-								</h5>
-                            <div class="font-serif m-b-20">
-                                I absolutely love the shots Dave took of me.  He was super patient with me, and I couldn't be happier with how they turned out.
-                            </div>
-                            <div class="quote-author font-alt">Sarah H / Actor</div>
-                        </div>
-                        <!-- /SLIDE 3 -->
-                        
-                        <!-- SLIDE 3 -->
-                        <div class="item">
-                            <h5 class="m-b-20 quote-icon">
-									<i class="ion-ios-chatboxes-outline"></i>
-								</h5>
-                            <div class="font-serif m-b-20">
-                                Dude!!! These shots are amazing.  I can't wait to show these to my agent.
-                            </div>
-                            <div class="quote-author font-alt">Matt M / Actor</div>
-                        </div>
-                        <!-- /SLIDE 3 -->
-                        <!-- SLIDE 3 -->
-                        <div class="item">
-                            <h5 class="m-b-20 quote-icon">
-									<i class="ion-ios-chatboxes-outline"></i>
-								</h5>
-                            <div class="font-serif m-b-20">
-                                These are AMAZING! I could not be more happy with these shots, especially the headshots. I've enjoyed working together so much, thank you!!
-                            </div>
-                            <div class="quote-author font-alt">Leah B / Opera Singer</div>
-                        </div>
-                        <!-- /SLIDE 3 -->
-
                     </div>
                     <!-- /TESTIMONIALS CAROUSEL -->
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
     <!-- /TESTIMONIALS -->
 
