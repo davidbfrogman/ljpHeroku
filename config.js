@@ -1190,7 +1190,7 @@ System.config({
       "npm:aurelia-templating@1.0.0-beta.1.1.4.js",
       "npm:aurelia-templating@1.0.0-beta.1.1.4/aurelia-templating.js"
     ],
-    "bundle-dbp-29f744bb7e.js": [
+    "bundle-dbp-dc80b673e8.js": [
       "3rdParty/appear.js",
       "3rdParty/dbpParallax.js",
       "3rdParty/owl.carousel.js",
