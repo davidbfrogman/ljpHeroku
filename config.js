@@ -1190,7 +1190,7 @@ System.config({
       "npm:aurelia-templating@1.0.0-beta.1.1.4.js",
       "npm:aurelia-templating@1.0.0-beta.1.1.4/aurelia-templating.js"
     ],
-    "bundle-dbp-dc80b673e8.js": [
+    "bundle-dbp-cd1f1f9e14.js": [
       "3rdParty/appear.js",
       "3rdParty/dbpParallax.js",
       "3rdParty/owl.carousel.js",
@@ -1256,6 +1256,8 @@ System.config({
       "npm:isotope-layout@2.2.2/js/layout-modes/vertical.js",
       "npm:isotope-packery@1.1.3.js",
       "npm:isotope-packery@1.1.3/packery-mode.js",
+      "npm:jquery@2.2.1.js",
+      "npm:jquery@2.2.1/dist/jquery.js",
       "npm:masonry-layout@3.3.2.js",
       "npm:masonry-layout@3.3.2/masonry.js",
       "npm:outlayer@1.4.2.js",
