@@ -1108,12 +1108,8 @@ System.config({
       "PortfolioManager/list.html!github:systemjs/plugin-text@0.0.4.js",
       "PortfolioManager/list.js"
     ],
-    "bundle-aurelia-55be7ab410.js": [
-      "github:components/jquery@2.2.0.js",
-      "github:components/jquery@2.2.0/jquery.js",
-      "github:twbs/bootstrap@3.3.6.js",
+    "bundle-aurelia-82f31e8f6f.js": [
       "github:twbs/bootstrap@3.3.6/css/bootstrap.css!github:systemjs/plugin-text@0.0.4.js",
-      "github:twbs/bootstrap@3.3.6/js/bootstrap.js",
       "npm:aurelia-binding@1.0.0-beta.1.2.2.js",
       "npm:aurelia-binding@1.0.0-beta.1.2.2/aurelia-binding.js",
       "npm:aurelia-bootstrapper@1.0.0-beta.1.1.4.js",
@@ -1192,11 +1188,9 @@ System.config({
       "npm:aurelia-templating-router@1.0.0-beta.1.1.2/route-loader.js",
       "npm:aurelia-templating-router@1.0.0-beta.1.1.2/router-view.js",
       "npm:aurelia-templating@1.0.0-beta.1.1.4.js",
-      "npm:aurelia-templating@1.0.0-beta.1.1.4/aurelia-templating.js",
-      "npm:jquery@2.2.1.js",
-      "npm:jquery@2.2.1/dist/jquery.js"
+      "npm:aurelia-templating@1.0.0-beta.1.1.4/aurelia-templating.js"
     ],
-    "bundle-dbp-d4881f999f.js": [
+    "bundle-dbp-29f744bb7e.js": [
       "3rdParty/appear.js",
       "3rdParty/dbpParallax.js",
       "3rdParty/owl.carousel.js",
