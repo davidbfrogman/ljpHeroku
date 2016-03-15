@@ -12,6 +12,7 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+
   map: {
     "aurelia-animator-css": "npm:aurelia-animator-css@1.0.0-beta.1.1.1",
     "aurelia-binding": "npm:aurelia-binding@1.0.0-beta.1.1.3",
@@ -41,7 +42,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.35",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "carousel-js": "npm:carousel-js@1.4.1",
-    "core-js": "npm:core-js@2.1.0",
+    "core-js": "npm:core-js@2.1.5",
     "fetch": "github:github/fetch@0.11.0",
     "flickity": "npm:flickity@1.1.2",
     "font-awesome": "npm:font-awesome@4.5.0",
@@ -385,6 +386,12 @@ System.config({
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:core-js@2.1.0": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
+    "npm:core-js@2.1.5": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
@@ -1098,4 +1105,4 @@ System.config({
       "window-size": "npm:window-size@0.1.0"
     }
   }
-})
+});
