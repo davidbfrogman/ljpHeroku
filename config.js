@@ -12,6 +12,7 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+
   map: {
     "aurelia-animator-css": "npm:aurelia-animator-css@1.0.0-beta.1.1.1",
     "aurelia-binding": "npm:aurelia-binding@1.0.0-beta.1.1.3",
@@ -382,12 +383,6 @@ System.config({
       "typedarray": "npm:typedarray@0.0.6"
     },
     "npm:constants-browserify@0.0.1": {
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
-    },
-    "npm:core-js@2.1.0": {
-      "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "path": "github:jspm/nodelibs-path@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:core-js@2.1.5": {
@@ -1104,4 +1099,4 @@ System.config({
       "window-size": "npm:window-size@0.1.0"
     }
   }
-})
+});
