@@ -62,7 +62,7 @@ export class contact {
     loadGoogleMap() {
         if (typeof google === 'undefined') {
             this.loadScript('https://maps.googleapis.com/maps/api/js', () => {
-                this.loadScript('jspm_packages/npm/gmaps@0.4.22/gmaps.js', () => {
+                this.loadScript('jspm_packages/npm/gmaps@0.4.23/gmaps.js', () => {
                     this.buildMapUserInterface();
                 });
             });
