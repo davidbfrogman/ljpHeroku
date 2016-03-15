@@ -25,10 +25,10 @@ export class App {
         }
 
         config.map([
-            { route: ['portfolio', ''], name: 'portfolio', moduleId: 'portfolio', nav: true, title: 'Portfolio' },
-            { route: ['about'], name: 'about', moduleId: 'about', nav: true, title: 'About' },
-            { route: ['faq'], name: 'faq', moduleId: 'faq', nav: true, title: 'FAQ' },
-            { route: ['contact'], name: 'contact', moduleId: 'contact', nav: true, title: 'Contact' },
+            { route: ['portfolio', '', 'Portfolio', 'PORTFOLIO'], name: 'portfolio', moduleId: 'portfolio', nav: true, title: 'Portfolio' },
+            { route: ['about','ABOUT','About'], name: 'about', moduleId: 'about', nav: true, title: 'About' },
+            { route: ['faq','FAQ','Faq'], name: 'faq', moduleId: 'faq', nav: true, title: 'FAQ' },
+            { route: ['contact', 'Contact', 'CONTACT'], name: 'contact', moduleId: 'contact', nav: true, title: 'Contact' },
             { route: ['portfolioManager'], name: 'portfolioManager', moduleId: './PortfolioManager/index', nav: showPortManInNav, title: 'Port Manager' },
             { route: ['imagedetail'], name: 'imagedetail', moduleId: 'imagedetail', nav: false, title: 'Portfolio Item Image Detail' },
             { route: ['pd/:detailname/:id'], name: 'imagedetail', moduleId: 'imagedetail', nav: false, title: 'Photography' }
