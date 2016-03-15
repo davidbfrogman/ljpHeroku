@@ -12,7 +12,6 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
-
   map: {
     "aurelia-animator-css": "npm:aurelia-animator-css@1.0.0-beta.1.1.1",
     "aurelia-binding": "npm:aurelia-binding@1.0.0-beta.1.1.3",
@@ -156,7 +155,7 @@ System.config({
       "aurelia-metadata": "npm:aurelia-metadata@1.0.0-beta.1.1.6",
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.1.1",
       "aurelia-task-queue": "npm:aurelia-task-queue@1.0.0-beta.1.1.1",
-      "core-js": "npm:core-js@2.1.0"
+      "core-js": "npm:core-js@2.1.5"
     },
     "npm:aurelia-binding@1.0.0-beta.1.2.2": {
       "aurelia-metadata": "npm:aurelia-metadata@1.0.0-beta.1.1.6",
@@ -183,7 +182,7 @@ System.config({
       "aurelia-logging": "npm:aurelia-logging@1.0.0-beta.1.1.2",
       "aurelia-metadata": "npm:aurelia-metadata@1.0.0-beta.1.1.6",
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.1.1",
-      "core-js": "npm:core-js@2.1.0"
+      "core-js": "npm:core-js@2.1.5"
     },
     "npm:aurelia-dependency-injection@1.0.0-beta.1.1.5": {
       "aurelia-logging": "npm:aurelia-logging@1.0.0-beta.1.1.2",
@@ -226,7 +225,7 @@ System.config({
     },
     "npm:aurelia-pal-browser@1.0.0-beta.1.1.3": {
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.1.1",
-      "core-js": "npm:core-js@2.1.0"
+      "core-js": "npm:core-js@2.1.5"
     },
     "npm:aurelia-pal-browser@1.0.0-beta.1.1.4": {
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.1.1"
@@ -236,7 +235,7 @@ System.config({
     },
     "npm:aurelia-route-recognizer@1.0.0-beta.1.1.1": {
       "aurelia-path": "npm:aurelia-path@1.0.0-beta.1.1.1",
-      "core-js": "npm:core-js@2.1.0"
+      "core-js": "npm:core-js@2.1.5"
     },
     "npm:aurelia-route-recognizer@1.0.0-beta.1.1.3": {
       "aurelia-path": "npm:aurelia-path@1.0.0-beta.1.1.1"
@@ -285,7 +284,7 @@ System.config({
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.1.1",
       "aurelia-path": "npm:aurelia-path@1.0.0-beta.1.1.1",
       "aurelia-task-queue": "npm:aurelia-task-queue@1.0.0-beta.1.1.1",
-      "core-js": "npm:core-js@2.1.0"
+      "core-js": "npm:core-js@2.1.5"
     },
     "npm:aurelia-templating@1.0.0-beta.1.1.4": {
       "aurelia-binding": "npm:aurelia-binding@1.0.0-beta.1.2.2",
@@ -854,7 +853,7 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:parallax-scroll@0.1.1": {
-      "core-js": "npm:core-js@2.1.0"
+      "core-js": "npm:core-js@2.1.5"
     },
     "npm:parse-json@2.2.0": {
       "error-ex": "npm:error-ex@1.3.0"
@@ -1105,4 +1104,4 @@ System.config({
       "window-size": "npm:window-size@0.1.0"
     }
   }
-});
+})
