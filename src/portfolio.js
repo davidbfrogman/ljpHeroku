@@ -50,6 +50,7 @@ export class Portfolio {
                 var editorialCount = 0;
                 var headshotCount = 0;
                 var editorialPortraitCount = 0;
+                var bandCount = 0;
 
                 for (var book of this.portfolioBooks) {
                     //Now we need to remove the space from the string because later we're going to filter on it.
@@ -65,24 +66,42 @@ export class Portfolio {
                         return parseInt(a.order) - parseInt(b.order);
                     })
                 }
+
                 //Basically I want to filter out portfolio books if it's mobile.  I don't want to make users 
                 //wait forever to download all my images.
-                if (this.dbpUtility.isMobile) {
-                    this.portfolioBooks.filter(function(book) {
-                        if(book.category == 'Fashion' && fashionCount < 5){
-                            fashionCount++;
-                            console.log('Filtering Fashion Images for Mobile:' + fashionCount);
-                            return true;                            
-                        }
-                        if(book.category == 'Editorial' && editorialCount < 3){
-                            editorialCount++;
-                            console.log('Filtering Editorial Images for Mobile:' + editorialCount);
-                            return true;                            
-                        }
-                        return false;
-                    });
-                }
-            })
+                //I'm commenting this out for now.  It works, but I'm not exactly happy with how my port looks 
+                //without everything in there.
+                // if (this.dbpUtility.isMobile) {
+                //     this.portfolioBooks = this.portfolioBooks.filter(function(book) {
+                //         if (book.category == 'Fashion' && fashionCount < 5) {
+                //             fashionCount++;
+                //             console.log('Filtering Fashion Images for Mobile:' + fashionCount);
+                //             return true;
+                //         }
+                //         if (book.category == 'Editorial' && editorialCount < 3) {
+                //             editorialCount++;
+                //             console.log('Filtering Editorial Images for Mobile:' + editorialCount);
+                //             return true;
+                //         }
+                //         if (book.category == 'EditorialPortrait' && editorialPortraitCount < 6) {
+                //             editorialPortraitCount++;
+                //             console.log('Filtering Editorial Portrait Images for Mobile:' + editorialPortraitCount);
+                //             return true;
+                //         }
+                //         if (book.category == 'Band' && bandCount < 3) {
+                //             bandCount++;
+                //             console.log('Filtering Band Images for Mobile:' + bandCount);
+                //             return true;
+                //         }
+                //         if (book.category == 'Headshot' && headshotCount < 6) {
+                //             headshotCount++;
+                //             console.log('Filtering Band Images for Mobile:' + headshotCount);
+                //             return true;
+                //         }
+                //         return false;
+                //     });
+                // }
+            });
     }
 
     attached() {
@@ -104,29 +123,29 @@ export class Portfolio {
         this.dbpheader.showHeroCaption();
 
         $(window).on('resize', () => {
-            try {
-                this.isotopeInstance.arrange();
-            } catch (error) {
-                console.log('something went wrong trying to resize isotope on window resize.')
-            }
+            self.initializeIsotope(self);
         });
 
         this.worksgrid.imagesLoaded()
             .done((instance) => {
                 //build out the isotope instance
-                self.isotopeInstance.arrange({ filter: self.currentFilter });
+                self.initializeIsotope(self);
             })
             .progress((instance, image) => {
                 //TODO: Figure out how to relayout the isotope instance
                 //as the images are loaded.
                 if (instance.progressedCount % 5 == 0) {
-                    if (!self.isotopeBuilt) {
-                        self.buildIsotope();
-                        self.isotopeBuilt = true;
-                    }
-                    self.isotopeInstance.arrange({ filter: self.currentFilter });
+                    self.initializeIsotope(self);
                 }
             });
+    }
+
+    initializeIsotope(self) {
+        if (!self.isotopeBuilt) {
+            self.buildIsotope();
+            self.isotopeBuilt = true;
+        }
+        self.isotopeInstance.arrange({ filter: self.currentFilter });
     }
 
     showPortfolioItems(book, item) {
