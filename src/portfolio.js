@@ -45,19 +45,42 @@ export class Portfolio {
             .then(portfolioBooks => {
                 this.portfolioBooks = portfolioBooks;
                 var i = 0;
+
+                var fashionCount = 0;
+                var editorialCount = 0;
+                var headshotCount = 0;
+                var editorialPortraitCount = 0;
+
                 for (var book of this.portfolioBooks) {
                     //Now we need to remove the space from the string because later we're going to filter on it.
                     //For instance the editorial portrait category is something we want to filter on.
                     //if(i >2){ delete this.portfolioBooks[i]; }
-                    book.prettyUrl = encodeURI( '/pd/' + book.title + '-' + book.subtitle + '-Denver' + '-' + book.category + '-' + 'photographer' + '/' + book.id )
-                                    .replace(/%20/g,'-')
-                                    .replace('.','');
-                    
+                    book.prettyUrl = encodeURI('/pd/' + book.title + '-' + book.subtitle + '-Denver' + '-' + book.category + '-' + 'photographer' + '/' + book.id)
+                        .replace(/%20/g, '-')
+                        .replace('.', '');
+
                     i++;
                     book.category = book.category.replace(/\s+/g, '');
-                    book.items.sort(function (a, b) {
+                    book.items.sort(function(a, b) {
                         return parseInt(a.order) - parseInt(b.order);
                     })
+                }
+                //Basically I want to filter out portfolio books if it's mobile.  I don't want to make users 
+                //wait forever to download all my images.
+                if (this.dbpUtility.isMobile) {
+                    this.portfolioBooks.filter(function(book) {
+                        if(book.category == 'Fashion' && fashionCount < 5){
+                            fashionCount++;
+                            console.log('Filtering Fashion Images for Mobile:' + fashionCount);
+                            return true;                            
+                        }
+                        if(book.category == 'Editorial' && editorialCount < 3){
+                            editorialCount++;
+                            console.log('Filtering Editorial Images for Mobile:' + editorialCount);
+                            return true;                            
+                        }
+                        return false;
+                    });
                 }
             })
     }
@@ -69,14 +92,14 @@ export class Portfolio {
         this.portfolioGrid = $('#portfolio-grid');
         this.isotopeBuilt = false;
         var self = this;
-        
+
         document.title = "Denver Fashion Photographer || Portfolio";
-       
+
         this.dbpUtility.scrollToTopOfPage();
-    
+
         //find the all filter on my portfolio, and add current class to it.
         $('#All').addClass('current');
-    
+
         //Even if we come back from the contact, and FAQ page, I want the text to show on my heading.  
         this.dbpheader.showHeroCaption();
 
@@ -96,11 +119,10 @@ export class Portfolio {
             .progress((instance, image) => {
                 //TODO: Figure out how to relayout the isotope instance
                 //as the images are loaded.
-                if(instance.progressedCount % 5 == 0)
-                {
-                    if(!self.isotopeBuilt){
-                         self.buildIsotope();
-                         self.isotopeBuilt = true;
+                if (instance.progressedCount % 5 == 0) {
+                    if (!self.isotopeBuilt) {
+                        self.buildIsotope();
+                        self.isotopeBuilt = true;
                     }
                     self.isotopeInstance.arrange({ filter: self.currentFilter });
                 }
@@ -151,7 +173,7 @@ export class Portfolio {
         var items = [];
         var slideStartIndex = 0;
 
-        slideStartIndex = book.items.map(function (x) { return x.id; }).indexOf(item.id);
+        slideStartIndex = book.items.map(function(x) { return x.id; }).indexOf(item.id);
 
         for (var item of book.items) {
             //We're basically saying if the item has zero dimensions the default is going to be 800x534.
@@ -167,15 +189,15 @@ export class Portfolio {
 
         this.secPhotoswipe.hide();
         this.secPhotoswipe.fadeIn(this.generalAnimationDuration);
-        
+
         // define options (if needed)
         var options = {
             // optionName: 'option value'
             // for example:
             index: slideStartIndex, // start at first slide or the slide that was clicked.
             bgOpacity: 1,
-            hideAnimationDuration:0, 
-            showAnimationDuration:0,
+            hideAnimationDuration: 0,
+            showAnimationDuration: 0,
             closeOnScroll: false,
             history: true,
             preload: [1, 4]

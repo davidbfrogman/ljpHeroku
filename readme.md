@@ -18,4 +18,6 @@ you'll want to update that import statement.
 
 - jspm update aurelia-bootstrapper aurelia-fetch-client aurelia-framework aurelia-history-browser aurelia-loader-default aurelia-logging-console aurelia-router aurelia-templating-binding aurelia-templating-resources aurelia-templating-router
 
-- For my weird run in with prerender.  The things that ended up fixing it were to run jspm update (not just the aurelia framework), and then I couldn't get it to work locally unless I bundled my app.  Not sure why, but that seemed to fix it. 
+- For my weird run in with prerender.  The things that ended up fixing it were to run jspm update (not just the aurelia framework), and then I couldn't get it to work locally unless I bundled my app.  Not sure why, but that seemed to fix it.
+
+- JSPM giving you hell when you're trying to run jspm update try closing visual studio.  I'm thinking maybe the git plugin or intellisense is fucking with jspm in weird ways. 
