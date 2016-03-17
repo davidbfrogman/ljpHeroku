@@ -26,6 +26,18 @@ export class reviewsdata {
                     name: 'Matt Z / Cellist',
                     content: 'Dave was awesome and professional. Photos look perfect.'
                 },
+                {
+                    name: 'Emily C / Portraits',
+                    content: 'Dave was great to work with.  He made me feel confident and comfortable.  Unlike most of his models I\'m not a professional but he was patient and gave me great advice for the best shots.  He turned around my finals faster than I expected.  I would use him for all my work in the future.'
+                },
+                {
+                    name: 'Amanda S / Model',
+                    content: 'Dave was such a great photographer. He helped me capture some beautiful pictures I will be able to use for my growing modeling career. His makeup artist was amazing and have me the exact look I was going for. Shooting with him was very comfortable and my pictures turned out gorgeous. I would highly recommend him if you\'re in the need of a photographer.'
+                },
+                {
+                    name: 'Patrick N / Model',
+                    content: 'Dave was amazing to work with.  He was very professional, knowledgeable, and knew exactly what was or wasn\'t working to get the best out of you.  He also made you feel very comfortable and at ease.  I would highly recommend him if you want some great shots from a great photographer.'
+                }
             ]
         }
     }
