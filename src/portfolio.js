@@ -113,8 +113,6 @@ export class Portfolio {
         this.isotopeBuilt = false;
         var self = this;
 
-        document.title = "Denver Fashion Photographer || Portfolio";
-
         this.dbpUtility.scrollToTopOfPage();
 
         //find the all filter on my portfolio, and add current class to it.
