@@ -58,7 +58,8 @@ export class Portfolio {
                     //if(i >2){ delete this.portfolioBooks[i]; }
                     book.prettyUrl = encodeURI('/pd/' + book.title + '-' + book.subtitle + '-Denver' + '-' + book.category + '-' + 'photographer' + '/' + book.id)
                         .replace(/%20/g, '-')
-                        .replace('.', '');
+                        .replace('.', '')
+                        .replace('-null','');
 
                     i++;
                     book.category = book.category.replace(/\s+/g, '');
