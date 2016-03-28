@@ -23,12 +23,11 @@ export class ImageDetail {
 
     attached() {
         //<link rel="canonical" href="https://blog.example.com/dresses/green-dresses-are-awesome" />
-        if (window.location.href.contains('/pd/')) {
+        if (window.location.href.indexOf('/pd/') > 0) {
             var link = document.createElement('link');
             link.href = window.location.href;
             link.rel = 'canonical';
         }
-
 
         document.getElementsByTagName('head')[0].appendChild(link);
 
