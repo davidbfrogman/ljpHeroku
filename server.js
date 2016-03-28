@@ -105,6 +105,14 @@
             console.log('Cleaned Blog URL:' + cleaned);
             res.redirect(301, 'http://blog.davebrownphotography.com' + cleaned);
         }
+        else if(req.originalUrl.toLowerCase().indexOf('%20') > 0
+        || req.originalUrl.toLowerCase().indexOf('null') > 0
+        || ( req.originalUrl.toLowerCase().indexOf('-') > 0 &&
+            req.originalUrl.toLowerCase().indexOf('/pd/') < 0 
+            )
+        ){
+            res.status(404).sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/404' } });
+        }
         else
         {
            console.log('hit catchall handling not in an aspx page.');
