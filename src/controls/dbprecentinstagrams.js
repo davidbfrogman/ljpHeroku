@@ -41,6 +41,14 @@ export class dbprecentinstagrams {
            
        this.drawCounters();
     }
+    
+    hide(){
+        $('#sec-recent-insta').hide();
+    }
+    
+    show(){
+        $('#sec-recent-insta').show();
+    }
 
     drawCounters() {
         $('.progress-bar').each(function (i) {

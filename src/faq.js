@@ -10,10 +10,12 @@ export class faq {
     
     attached()
     {
-        document.title = "Denver Fashion Photographer || FAQ";
-        
         this.dbpUtility.shrinkHeroModule();
         this.dbpUtility.scrollToTopOfPage();
+        this.dbpUtility.showControlsForImageDetail();
+        this.dbpUtility.setPageTitle('FAQ', true);
+        this.dbpUtility.setPageMetaDescription('Frequently Asked Questions.', true);
+        this.dbpUtility.setPageMetaKeywords('Questions, Answers, Frequent', true);
     }
 }
 

@@ -3,7 +3,7 @@ import {dbpUtility} from 'dbpUtility';
 import {smoothscroll} from './3rdParty/smoothscroll';
 import  './3rdParty/appear.js';
 import  './3rdParty/owl.carousel.js';
-import {reviewsdata} from 'reviewsdata.js';
+import {reviewsdata} from 'data/reviewsdata.js';
 
 
 @inject(smoothscroll, dbpUtility, reviewsdata)
@@ -21,6 +21,10 @@ export class about {
         this.smoothscroll.init();
         this.dbpUtility.shrinkHeroModule();
         this.dbpUtility.scrollToTopOfPage();
+        this.dbpUtility.showControlsForImageDetail();
+        this.dbpUtility.setPageTitle('About', true);
+        this.dbpUtility.setPageMetaDescription('About Dave Brown.', true);
+        this.dbpUtility.setPageMetaKeywords('About, News, Info, Questions', true);
         
         this.drawCounters();
         this.drawOwlSliders();

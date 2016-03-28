@@ -40,6 +40,10 @@ export class contact {
         
         this.dbpUtility.shrinkHeroModule();
         this.dbpUtility.scrollToTopOfPage();
+        this.dbpUtility.showControlsForImageDetail();
+        this.dbpUtility.setPageTitle('Contact', true);
+        this.dbpUtility.setPageMetaDescription('Contact Dave Brown.', true);
+        this.dbpUtility.setPageMetaKeywords('Contact, Get in Touch, Phone, Email, Address', true);
     }
 
     sendEmail() {

@@ -1,12 +1,13 @@
 <template>
     <div class="row" style="margin:40px;">
-        <h3 class="">${portfolioBook.title}</h3>
-        <h5 class="">${portfolioBook.subtitle}</h5>
+        <h1 class="">${portfolioBook.title}</h1>
+        <h2 class="">${portfolioBook.subtitle}</h2>
         <p>${portfolioBook.description}</p>
         <div repeat.for="item of portfolioBook.items">
             <div class="grid-item ${portfolioBook.class} ${portfolioBook.category}" style="margin:20px;">
                 <img src.bind="'/dist/images/fulls/' + item.imageURL" alt.bind="item.altText">
             </div>
         </div>
+        <h2><a href="/" title.bind="portfolioBook.backTitle">${portfolioBook.backTitle}</a></h2>
     </div>
 </template>

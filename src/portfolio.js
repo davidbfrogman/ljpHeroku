@@ -60,7 +60,12 @@ export class Portfolio {
                         .replace(/%20/g, '-')
                         .replace('.', '')
                         .replace('-null','');
-
+                        
+                    book.prettyTitle = encodeURI(book.title + '-' + book.subtitle + '-Denver' + '-' + book.category + '-' + 'photographer')
+                        .replace(/%20/g, '-')
+                        .replace('.', '')
+                        .replace('-null','');
+                        
                     i++;
                     book.category = book.category.replace(/\s+/g, '');
                     book.items.sort(function(a, b) {
@@ -114,6 +119,10 @@ export class Portfolio {
         var self = this;
 
         this.dbpUtility.scrollToTopOfPage();
+        this.dbpUtility.showControlsForImageDetail();
+        this.dbpUtility.setPageTitle('Portfolio', true);
+        this.dbpUtility.setPageMetaDescription('Portfolio of Dave Brown.', true);
+        this.dbpUtility.setPageMetaKeywords('Portfolio, Work, Images, Book', true);
 
         //find the all filter on my portfolio, and add current class to it.
         $('#All').addClass('current');
