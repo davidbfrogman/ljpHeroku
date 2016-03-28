@@ -117,10 +117,12 @@
         //This is URL cleanup for my original incarnation of my detail urls.
         else if(req.originalUrl.toLowerCase().indexOf('%20') > 0
         || ( req.originalUrl.toLowerCase().indexOf('-') > 0 &&
-            req.originalUrl.toLowerCase().indexOf('/pd/') < 0 
+            req.originalUrl.toLowerCase().indexOf('/pd/') < 0 //And there isn't a /pd/ in it (not the less than sign)
             )
         || (req.originalUrl.toLowerCase().indexOf('imagedetail') >= 0)    
         ){
+            //I'm sending it the 404.... keep in mind on image detail, it's still rendering the page, at least
+            //the status is correct now though.
             res.status(404).sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/404' } });
         }
         else
