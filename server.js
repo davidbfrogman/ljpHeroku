@@ -66,23 +66,22 @@
                 console.log('Redirection for Mobile');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
         }
-        if(req.originalUrl.indexOf('Portfolio/Denver') > 0){
+        else if(req.originalUrl.indexOf('Portfolio/Denver') > 0){
                 res.status(301);
                 console.log('Redirection for Mobile old portfolios');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
         }
-        if(req.originalUrl.toLowerCase().indexOf('Home/About') > 0
-        || req.originalUrl.toLowerCase().indexOf('Home/Contact') > 0
-        || req.originalUrl.toLowerCase().indexOf('Home/FAQ') > 0
-        || req.originalUrl.toLowerCase().indexOf('personalportfolio') > 0
+        else if(req.originalUrl.toLowerCase().indexOf('home/about') >= 0
+        || req.originalUrl.toLowerCase().indexOf('home/contact') >= 0
+        || req.originalUrl.toLowerCase().indexOf('home/faq') >= 0
+        || req.originalUrl.toLowerCase().indexOf('personalportfolio') >= 0
         )
         {
-                res.status(301);
                 console.log('Redirection for Random old Links');
-                res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
+                res.redirect(301, currentConfig.rootUrl);
         }
         //Old Site redirection
-        if(req.originalUrl.indexOf('.aspx') > 0)
+        else if(req.originalUrl.indexOf('.aspx') > 0)
         {
             console.log('Handling Redirection for ASPX Page');
             console.log('Heres the original URL for matching aspx page: ' + req.originalUrl);
