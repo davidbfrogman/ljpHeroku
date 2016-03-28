@@ -71,6 +71,7 @@
                 console.log('Redirection for Mobile old portfolios');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
         }
+        //I think these are from my original site.
         else if(req.originalUrl.toLowerCase().indexOf('home/about') >= 0
         || req.originalUrl.toLowerCase().indexOf('home/contact') >= 0
         || req.originalUrl.toLowerCase().indexOf('home/faq') >= 0
