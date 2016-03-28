@@ -119,7 +119,7 @@
         || ( req.originalUrl.toLowerCase().indexOf('-') > 0 &&
             req.originalUrl.toLowerCase().indexOf('/pd/') < 0 
             )
-        || (req.originalUrl.toLowerCase().indexOf('imagedetail') > 0)    
+        || (req.originalUrl.toLowerCase().indexOf('imagedetail') >= 0)    
         ){
             res.status(404).sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/404' } });
         }
