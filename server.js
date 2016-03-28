@@ -105,8 +105,8 @@
             console.log('Cleaned Blog URL:' + cleaned);
             res.redirect(301, 'http://blog.davebrownphotography.com' + cleaned);
         }
+        //This is URL cleanup for my original incarnation of my detail urls.
         else if(req.originalUrl.toLowerCase().indexOf('%20') > 0
-        || req.originalUrl.toLowerCase().indexOf('null') > 0
         || ( req.originalUrl.toLowerCase().indexOf('-') > 0 &&
             req.originalUrl.toLowerCase().indexOf('/pd/') < 0 
             )
