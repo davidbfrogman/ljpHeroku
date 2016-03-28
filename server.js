@@ -71,6 +71,16 @@
                 console.log('Redirection for Mobile old portfolios');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
         }
+        if(req.originalUrl.toLowerCase().indexOf('Home/About') > 0
+        || req.originalUrl.toLowerCase().indexOf('Home/Contact') > 0
+        || req.originalUrl.toLowerCase().indexOf('Home/FAQ') > 0
+        || req.originalUrl.toLowerCase().indexOf('personalportfolio') > 0
+        )
+        {
+                res.status(301);
+                console.log('Redirection for Random old Links');
+                res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
+        }
         //Old Site redirection
         if(req.originalUrl.indexOf('.aspx') > 0)
         {
@@ -110,6 +120,7 @@
         || ( req.originalUrl.toLowerCase().indexOf('-') > 0 &&
             req.originalUrl.toLowerCase().indexOf('/pd/') < 0 
             )
+        || (req.originalUrl.toLowerCase().indexOf('imagedetail') > 0)    
         ){
             res.status(404).sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl + '/404' } });
         }
