@@ -27,9 +27,8 @@ export class ImageDetail {
             var link = document.createElement('link');
             link.href = window.location.href;
             link.rel = 'canonical';
+            document.getElementsByTagName('head')[0].appendChild(link);
         }
-
-        document.getElementsByTagName('head')[0].appendChild(link);
 
         this.dbpUtility.hideControlsForImageDetail();
 

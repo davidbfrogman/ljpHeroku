@@ -111,6 +111,14 @@ export class Portfolio {
     }
 
     attached() {
+        //I want to make my portfolio page canonical only when the word portfolio isn't in it
+         if (window.location.href.indexOf('portfolio') <= 0) {
+            var link = document.createElement('link');
+            link.href = window.location.href;
+            link.rel = 'canonical';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+        
         this.worksgrid = $('#works-grid');
         this.filters = $('#filters');
         this.secPhotoswipe = $('#sec-photo-swipe');
