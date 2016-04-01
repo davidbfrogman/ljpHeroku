@@ -126,7 +126,7 @@ System.config({
       "longest": "npm:longest@1.0.1",
       "repeat-string": "npm:repeat-string@1.5.4"
     },
-    "npm:ansi-styles@2.2.0": {
+    "npm:ansi-styles@2.2.1": {
       "color-convert": "npm:color-convert@1.0.0"
     },
     "npm:argparse@0.1.16": {
@@ -339,7 +339,7 @@ System.config({
       "lazy-cache": "npm:lazy-cache@1.0.3"
     },
     "npm:chalk@1.1.1": {
-      "ansi-styles": "npm:ansi-styles@2.2.0",
+      "ansi-styles": "npm:ansi-styles@2.2.1",
       "escape-string-regexp": "npm:escape-string-regexp@1.0.5",
       "has-ansi": "npm:has-ansi@2.0.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
