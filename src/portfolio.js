@@ -111,14 +111,6 @@ export class Portfolio {
     }
 
     attached() {
-        //I want to make my portfolio page canonical only when the word portfolio isn't in it
-         if (window.location.href.indexOf('portfolio') <= 0) {
-            var link = document.createElement('link');
-            link.href = window.location.href;
-            link.rel = 'canonical';
-            document.getElementsByTagName('head')[0].appendChild(link);
-        }
-        
         this.worksgrid = $('#works-grid');
         this.filters = $('#filters');
         this.secPhotoswipe = $('#sec-photo-swipe');
@@ -131,6 +123,24 @@ export class Portfolio {
         this.dbpUtility.setPageTitle('Portfolio', true);
         this.dbpUtility.setPageMetaDescription('Portfolio of Dave Brown.', true);
         this.dbpUtility.setPageMetaKeywords('Portfolio, Work, Images, Book', true);
+        
+        //this means that this is prerender looking at my site
+        if(window.location.href.indexOf('_escaped_') >= 0)
+        {
+            $('#div-extra-content').show();
+        }
+        else
+        {
+            $('#div-extra-content').hide();
+        }
+        
+        //I want to make my portfolio page canonical only when the word portfolio isn't in it
+        if (window.location.href.indexOf('portfolio') <= 0) {
+            var link = document.createElement('link');
+            link.href = window.location.href;
+            link.rel = 'canonical';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
 
         //find the all filter on my portfolio, and add current class to it.
         $('#All').addClass('current');
