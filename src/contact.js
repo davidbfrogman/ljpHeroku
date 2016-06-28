@@ -14,7 +14,7 @@ export class contact {
         this.smoothscroll = smoothscroll;
         this.dbpConfig = dbpConfig;
         this.dbpUtility = dbpUtility;
-        this.heading = 'Contact Denver Fashion Photogrpaher';
+        this.heading = 'Contact Prague Fashion Photogrpaher';
                 
         this.http.configure(config => {
             config
@@ -108,7 +108,7 @@ export class contact {
                 icon: image,
                 title: 'Dave Brown Photography Studios',
                 infoWindow: {
-                    content: '<p><strong>Dave Brown Photography</strong><br/>12364 W Alameda Pkwy #125 Denver, CO 80212<br/>P: 303-949-6889<br/>E: info@davebrownphotography.com </p>'
+                    content: '<p><strong>Dave Brown Photography</strong><br/>12364 W Alameda Pkwy #125 Prague, CO 80212<br/>P: 303-949-6889<br/>E: info@davebrownphotography.com </p>'
                 }
             });
 

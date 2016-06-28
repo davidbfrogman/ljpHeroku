@@ -22,7 +22,7 @@ export class dbpUtility {
 
     setPageTitle(title, useDefaults) {
         if (useDefaults) {
-            document.head.querySelector('title').innerText = 'Denver Photographer | Fashion | Headshots | Advertising | ' + title;
+            document.head.querySelector('title').innerText = 'Prague Photographer | Fashion | Headshots | Advertising | ' + title;
         }
         else {
             document.head.querySelector('title').innerText = title;
@@ -31,7 +31,7 @@ export class dbpUtility {
     
     setPageMetaDescription(description, useDefaults) {
         if (useDefaults) {
-            document.getElementsByTagName('meta')['description'].content = 'Denver Photographer Dave Brown specializes in Fashion, Headshots, Advertising, Commercial, and Editorial Portrait Photography. ' + description;
+            document.getElementsByTagName('meta')['description'].content = 'Prague Photographer Dave Brown specializes in Fashion, Headshots, Advertising, Commercial, and Editorial Portrait Photography. ' + description;
         }
         else {
             document.getElementsByTagName('meta')['description'].content = description;
@@ -40,7 +40,7 @@ export class dbpUtility {
     
     setPageMetaKeywords(keywords, useDefaults) {
         if (useDefaults) {
-            document.getElementsByTagName('meta')['keywords'].content = 'denver photographer, denver fashion photographer, denver editorial portrait photographer, headshot photographer, colorado, ' + keywords;
+            document.getElementsByTagName('meta')['keywords'].content = 'prague photographer, prague fashion photographer, prague editorial portrait photographer, headshot photographer, czech republic, ' + keywords;
         }
         else {
             document.getElementsByTagName('meta')['keywords'].content = keywords;
