@@ -1,4 +1,10 @@
 #Readme
+
+-   git push heroku master 
+-   This is how you publish your site to heroku
+
+
+#Notes
 - When you finally launch your site, turn on the canonical URL rewrite rule in the web.config.
 
 - Frankly go through your whole web.config and make sure there's no other features you want to move over.
