@@ -1,13 +1,6 @@
 <template>
   
-  
-  <require from='bootstrap/css/bootstrap.css'></require>
-  <require from='styles/styles.css'></require>
-  
-  <!--I moved the navbar styles here because otherwise it loads before the bootstrap stylesheet.
-  You might seriously consider moving all your stylesheets here so that doesnt' happen.-->
-  <require from='styles/dbpBottomNav.css'></require>
-  <require from='styles/dbpNavBar.css'></require>
+  <require from="bootstrap/css/bootstrap.css"></require>
   
   <require from="controls/dbpnavbar"></require>
   <require from="controls/dbpbottomnav"></require>
@@ -15,6 +8,11 @@
   <require from="controls/dbprecentinstagrams"></require>
   <require from="controls/dbpfooter"></require>
   <require from="controls/dbpheader"></require>
+
+    <!--I moved the navbar styles here because otherwise it loads before the bootstrap stylesheet.
+  You might seriously consider moving all your stylesheets here so that doesnt' happen.-->
+  <require from="styles/dbpBottomNav.css"></require>
+  <require from="styles/dbpNavBar.css"></require>
   
   <dbpnavbar></dbpnavbar>
   <dbpheader></dbpheader>

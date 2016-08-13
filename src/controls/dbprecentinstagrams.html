@@ -19,25 +19,25 @@
             <div class="row" style="padding-bottom:30px; margin:auto; max-width:400px;">        
                 <div class="col-xs-4 counter-item">
                     <div class="counter-title font-alt">
-                        <h5 class="font-alt counter-number" data-number="${userdata.followersCount}"><span>${userdata.followersCount}</span></h5>Followers
+                        <h5 class="font-alt counter-number" data-number="${userdata.counts.followed_by}"><span>${userdata.counts.followed_by}</span></h5>Followers
                     </div>
                 </div>
                 <div class="col-xs-4 counter-item">
                     <div class="counter-title font-alt">
-                        <h5 class="font-alt counter-number" data-number="${userdata.postsCount}"><span>${userdata.postsCount}</span></h5>Posts
+                        <h5 class="font-alt counter-number" data-number="${userdata.counts.media}"><span>${userdata.counts.media}</span></h5>Posts
                     </div>
                 </div>
                 <div class="col-xs-4 counter-item">
                     <div class="counter-title font-alt">
-                        <h5 class="font-alt counter-number" data-number="${userdata.followingCount}"><span>${userdata.postsCount}</span></h5>Following
+                        <h5 class="font-alt counter-number" data-number="${userdata.counts.follows}"><span>${userdata.counts.follows}</span></h5>Following
                     </div>
                 </div>
             </div>
             <div class="instagram-container">
-                <div class="col-md-2 col-sm-4 col-xs-6 insta-item" repeat.for="post of posts">
+                <div class="col-md-2 col-sm-4 col-xs-6 insta-item" repeat.for="post of recent">
                     <div>
                         <a href.bind="post.link" target="_blank" rel="external nofollow">
-                            <img class="instagram-img" src.bind="post.imageURL" alt.bind="post.caption" />
+                            <img class="instagram-img" src.bind="post.images.low_resolution.url" alt.bind="post.caption.text" />
                         </a>
                     </div>
                 </div>

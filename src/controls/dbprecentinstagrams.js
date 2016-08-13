@@ -1,52 +1,38 @@
 import {inject} from 'aurelia-framework';
-import {HttpClient} from 'aurelia-fetch-client';
-import 'fetch';
-import {dbpConfig} from 'dbpConfig';
-import  './../3rdParty/appear.js';
+import './../3rdParty/appear.js';
+import {InstagramService} from './../service/InstagramService.js';
 
-@inject(HttpClient, dbpConfig)
+@inject(InstagramService)
 export class dbprecentinstagrams {
-    posts = [];
     userdata = {};
+    recent = [];
 
-    constructor(http, dbpConfig) {
+    constructor(InstagramService) {
         console.log('In the constructor for recent instagrams')
-        this.dbpConfig = dbpConfig;
-        this.http = http;
-
-        http.configure(config => {
-            config
-                .useStandardConfiguration()
-                .withBaseUrl(this.dbpConfig.dbpApiBaseUrl);
-        });
+        this.InstagramService = InstagramService;
     }
 
     //Attached here is different than activate.  I think activate is only for when you actually navigate to that page.
     //attached here is for controls when they're attached to the page.
     attached() {
-        this.http.fetch('GetCachedInstagramMedia')
-            .then(response => response.json())
-            .then(posts => this.posts = posts)
-            .then(
-                console.log('done getting back posts for instagram')
-                );
+        this.InstagramService.recentMedia()
+            .then(res => res.response.data)
+            .then(recent => { this.recent = recent });
+        //.then(x => { console.log(this.recent)});
 
-        this.http.fetch('GetCachedInstagramUserData')
-            .then(response => response.json())
-            .then(userdata => this.userdata = userdata)
-            .then(
-                console.log('done getting back userdata for instagram')
-                )
-           .then( () =>{ $('#img-profile').attr("src", this.userdata.profileImageUrl); });
-           
-       this.drawCounters();
+        this.InstagramService.userDetails()
+            .then(res => res.response.data)
+            .then(userdata => { this.userdata = userdata })
+            .then(() => { $('#img-profile').attr("src", this.userdata.profile_picture); });
+
+        this.drawCounters();
     }
-    
-    hide(){
+
+    hide() {
         $('#sec-recent-insta').hide();
     }
-    
-    show(){
+
+    show() {
         $('#sec-recent-insta').show();
     }
 

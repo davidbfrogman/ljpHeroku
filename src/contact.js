@@ -77,7 +77,7 @@ export class contact {
     }
 
     buildMapUserInterface() {
-        var mapLocation = new google.maps.LatLng(39.703097, -105.137289, 878);
+        var mapLocation = new google.maps.LatLng(50.0773402, 14.4032811, 400);
 
         var $mapis = $('#map');
 
@@ -93,7 +93,7 @@ export class contact {
                 scrollwheel: false,
                 center: mapLocation,
                 el: '#map',
-                zoom: 13,
+                zoom: 15,
                 styles: [{ "featureType": "all", "elementType": "labels.text.fill", "stylers": [{ "saturation": 36 }, { "color": "#000000" }, { "lightness": 40 }] }, { "featureType": "all", "elementType": "labels.text.stroke", "stylers": [{ "visibility": "on" }, { "color": "#000000" }, { "lightness": 16 }] }, { "featureType": "all", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative", "elementType": "geometry.fill", "stylers": [{ "color": "#000000" }, { "lightness": 20 }] }, { "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{ "color": "#000000" }, { "lightness": 17 }, { "weight": 1.2 }] }, { "featureType": "landscape", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 20 }] }, { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 21 }] }, { "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{ "color": "#000000" }, { "lightness": 17 }] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{ "color": "#000000" }, { "lightness": 29 }, { "weight": 0.2 }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 18 }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 16 }] }, { "featureType": "transit", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 19 }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 17 }] }]
             });
 
@@ -108,7 +108,7 @@ export class contact {
                 icon: image,
                 title: 'Dave Brown Photography Studios',
                 infoWindow: {
-                    content: '<p><strong>Dave Brown Photography</strong><br/>12364 W Alameda Pkwy #125 Prague, CO 80212<br/>P: 303-949-6889<br/>E: info@davebrownphotography.com </p>'
+                    content: '<p><strong>Dave Brown Photography</strong><br/>Elišky Peškové 469/6, 150 00 Praha 5-Smíchov<br/>P: +420 605 336 247<br/>E: info@davebrownphotography.com </p>'
                 }
             });
 
