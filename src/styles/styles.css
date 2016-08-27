@@ -19,7 +19,7 @@ General Styles
 
 body {
 	background: #fff;
-	font: 400 14px/1.8 "Open Sans", sans-serif;
+	font: 400 14px/1.8 "Playfair Display SC", sans-serif;
 	color: #777;
 	overflow-x: hidden;
 	-ms-overflow-style: scrollbar;
@@ -180,7 +180,7 @@ blockquote.serif-quote {
 }
 
 .font-alt {
-	font-family: "Dosis", sans-serif;
+	font-family: "Quicksand", sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 3px;
 }
@@ -202,7 +202,7 @@ Forms
 .form-control {
 	border: 2px solid #eee;
 	height: 33px;
-	font-family: "Dosis", sans-serif;
+	font-family: "Quicksand", sans-serif;
 	letter-spacing: 2px;
 	font-size: 14px;
 	-webkit-border-radius: 2px;
@@ -1009,7 +1009,7 @@ Navigation
 	font-weight: 400;
 	font-size: 13px;
 	color: #fff;
-	font-family:museo-sans;
+	font-family:Quicksand;
 	padding: 16px 10px;
 }
 
@@ -1192,7 +1192,7 @@ Navigation
 }
 
 #nav > li > a {
-	font-family: "Dosis", sans-serif;
+	font-family: "Quicksand", sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	font-size: 30px;
@@ -1987,10 +1987,10 @@ Blog Styles
 }
 
 .BlogDate{
-font-family: "Playfair Display","Times New Roman";
+font-family: "Playfair Display SC","Times New Roman";
 }
 .BlogTitle{
-	font-family: "Playfair Display","Times New Roman";
+	font-family: "Playfair Display SC","Times New Roman";
 }
 .BlogSnippet{
 

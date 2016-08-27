@@ -12,9 +12,6 @@
                     <li repeat.for="row of router.navigation">
                         <a data-toggle="collapse" data-target="#" href.bind="row.href" click.delegate="hideOverlayMenu()" class="${row.isActive ? 'active' : ''}">${row.title}</a>
                     </li>
-                    <li>
-                       <a href="http://lynzijudish.com/blog/" target="blank" click.delegate="navigateToBlog()">Blog</a>
-                    </li>
                 </ul>
             </nav>
         </div>
