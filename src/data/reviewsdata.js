@@ -8,7 +8,7 @@ export class reviewsdata {
                 },
                 {
                     name: 'Brett / Remax Prague',
-                    content: 'If you\'re serious and you want some truly kick ass photographs, book Dave Brown Photography. You won\'t be disappointed.'
+                    content: 'If you\'re serious and you want some truly kick ass photographs, book Lynzi Judish Photography. You won\'t be disappointed.'
                 },
                 {
                     name: 'Sarah H / Actor',

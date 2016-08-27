@@ -1088,4 +1088,4 @@ System.config({
       "window-size": "npm:window-size@0.1.0"
     }
   }
-})
+});

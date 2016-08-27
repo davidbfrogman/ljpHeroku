@@ -3,7 +3,8 @@ export class dbpConfig{
 	}
 	
 	get dbpApiBaseUrl(){
-		return "http://api.davebrownphotography.com/api/";
+		//return "http://api.lynzijudish.com/api/";
+		return "http://api.ljp.com/api/";
 	}
 	
 	get blogApiBaseUrl(){

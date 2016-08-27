@@ -42,7 +42,7 @@ export class contact {
         this.dbpUtility.scrollToTopOfPage();
         this.dbpUtility.showControlsForImageDetail();
         this.dbpUtility.setPageTitle('Contact', true);
-        this.dbpUtility.setPageMetaDescription('Contact Dave Brown.', true);
+        this.dbpUtility.setPageMetaDescription('Contact Lynzi Judish.', true);
         this.dbpUtility.setPageMetaKeywords('Contact, Get in Touch, Phone, Email, Address', true);
     }
 
@@ -106,9 +106,9 @@ export class contact {
             map.addMarker({
                 position: mapLocation,
                 icon: image,
-                title: 'Dave Brown Photography Studios',
+                title: 'Lynzi Judish Photography Studios',
                 infoWindow: {
-                    content: '<p><strong>Dave Brown Photography</strong><br/>Elišky Peškové 469/6, 150 00 Praha 5-Smíchov<br/>P: +420 605 336 247<br/>E: info@davebrownphotography.com </p>'
+                    content: '<p><strong>Lynzi Judish Photography</strong><br/>Elišky Peškové 469/6, 150 00 Praha 5-Smíchov<br/>P: +420 605 336 247<br/>E: info@lynzijudish.com </p>'
                 }
             });
 

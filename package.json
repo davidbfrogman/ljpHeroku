@@ -7,12 +7,12 @@
     "portfolio",
     "mobile"
   ],
-  "homepage": "http://www.davebrownphotography.com/",
+  "homepage": "http://www.lynzijudish.com/",
   "bugs": {
     "url": "http://github.com/davidbfrogman/DBPHeroku"
   },
   "license": "CC0-1.0",
-  "author": "Dave Brown (http://www.davebrownphotography.com)",
+  "author": "Lynzi Judish (http://www.lynzijudish.com)",
   "main": "server.js",
   "repository": {
     "type": "git",

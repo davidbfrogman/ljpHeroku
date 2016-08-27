@@ -23,7 +23,7 @@ export class dbpnavbar {
 
     navigateToBlog() {
         this.hideOverlayMenu();
-        window.open('http://blog.davebrownphotography.com', '_blank');
+        window.open('http://lynzijudish.com/blog/', '_blank');
     }
 
     attached() {

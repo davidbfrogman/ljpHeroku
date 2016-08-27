@@ -121,7 +121,7 @@ export class Portfolio {
         this.dbpUtility.scrollToTopOfPage();
         this.dbpUtility.showControlsForImageDetail();
         this.dbpUtility.setPageTitle('Portfolio', true);
-        this.dbpUtility.setPageMetaDescription('Portfolio of Dave Brown.', true);
+        this.dbpUtility.setPageMetaDescription('Portfolio of Lynzi Judish.', true);
         this.dbpUtility.setPageMetaKeywords('Portfolio, Work, Images, Book', true);
         
         //this means that this is prerender looking at my site

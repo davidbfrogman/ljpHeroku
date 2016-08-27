@@ -23,7 +23,7 @@ export class about {
         this.dbpUtility.scrollToTopOfPage();
         this.dbpUtility.showControlsForImageDetail();
         this.dbpUtility.setPageTitle('About', true);
-        this.dbpUtility.setPageMetaDescription('About Dave Brown.', true);
+        this.dbpUtility.setPageMetaDescription('About Lynzi Judish.', true);
         this.dbpUtility.setPageMetaKeywords('About, News, Info, Questions', true);
         
         this.drawCounters();

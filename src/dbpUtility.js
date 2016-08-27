@@ -31,7 +31,7 @@ export class dbpUtility {
     
     setPageMetaDescription(description, useDefaults) {
         if (useDefaults) {
-            document.getElementsByTagName('meta')['description'].content = 'Prague Photographer Dave Brown specializes in Fashion, Headshots, Advertising, Commercial, and Editorial Portrait Photography. ' + description;
+            document.getElementsByTagName('meta')['description'].content = 'Prague Photographer Lynzi Judish specializes in Fashion, Headshots, Advertising, Commercial, and Editorial Portrait Photography. ' + description;
         }
         else {
             document.getElementsByTagName('meta')['description'].content = description;

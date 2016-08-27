@@ -10,7 +10,7 @@
     var logger   = morgan('combined');
     var favicon  = require('serve-favicon');
     var port     = process.env.PORT || 8080;        // set our port
-    var prodDomain = 'www.davebrownphotography.com';       //change this whenever we setup our cname
+    var prodDomain = 'www.lynzijudish.com';       //change this whenever we setup our cname
     
     // configuration =================
     var config = {
@@ -61,7 +61,7 @@
         console.log('OriginalUrl for the request: ' + req.originalUrl);
         
         //Mobile Redirection
-        if(req.hostname.toLowerCase().indexOf('m.davebrownphotography.com') >= 0 ){ 
+        if(req.hostname.toLowerCase().indexOf('m.lynzijudish.com') >= 0 ){ 
                 res.status(301);
                 console.log('Redirection for Mobile');
                 res.sendFile(root + '/index.html', { headers:{ 'Location' : currentConfig.rootUrl } });
@@ -113,7 +113,7 @@
             var cleaned = req.originalUrl.toLowerCase();
             cleaned = cleaned.replace('/bloginstall','');
             console.log('Cleaned Blog URL:' + cleaned);
-            res.redirect(301, 'http://blog.davebrownphotography.com' + cleaned);
+            res.redirect(301, 'http://blog.lynzijudish.com' + cleaned);
         }
         //This is URL cleanup for my original incarnation of my detail urls.
         else if(req.originalUrl.toLowerCase().indexOf('%20') > 0
