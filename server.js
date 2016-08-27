@@ -31,6 +31,8 @@
     }
     
     //Get the correct config prod/dev
+    //I think this is calculated from the prod config variable that's actually in heroku, to change it you need to set that config variable in the 
+    //heroku website.
     var currentConfig = process.env.prod == 'true' ? config.prodConfig : config.devConfig;
     
     //This will be helpful on production when we want to force users to www version of my site.
