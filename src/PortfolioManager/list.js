@@ -83,6 +83,12 @@ export class List {
         this.service.deletePortfolioBook(portfolioBook).then(x => this.getData());
     }
 
+    refreshPortfolioCache(){
+        var spnCacheRefreshStatus = $('#spnCacheRefreshStatus');
+        this.service.refreshPortfolioCache()
+        .then(response => spnCacheRefreshStatus.html('Cache Refresh Message: ' + response));
+    }
+
     AddSinglePortfolioBooks() {
         var inputPortfolioFiles = $('#inptSingles')[0].files;
         for (var i = 0; i < inputPortfolioFiles.length; i++) {

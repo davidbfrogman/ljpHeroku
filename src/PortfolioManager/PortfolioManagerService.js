@@ -82,6 +82,13 @@ export class PortfolioManagerService {
         return Promise.all(savePromises);
     }
 
+    refreshPortfolioCache(){
+        return this.http.fetch(`refreshportfoliocache`)
+            .then(response => {
+                return response.json();
+            });
+    }
+
     deletePortfolioBook(portfolioBook) {
         console.log('Were about to delete the following port book');
         console.log(portfolioBook);

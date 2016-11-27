@@ -77,4 +77,12 @@
             <button class="btn btn-info" click.delegate="AddSinglePortfolioBooks()" >Add Single Portfolio Books</button>
         </div>    
 </section>
+<section style="margin:30px; width: 400px;">
+        <div>
+            <h2>Here's where you refresh the portfolio cache, so new images show up on your site</h2>
+            <button class="btn btn-info" click.delegate="refreshPortfolioCache()" >Refresh Portfolio Cache</button>
+            <br />
+            <span id="spnCacheRefreshStatus" ></span>
+        </div>    
+</section>
 </template>
