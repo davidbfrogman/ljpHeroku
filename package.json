@@ -118,5 +118,8 @@
         "main": "client/shim.min"
       }
     }
+  },
+  "devDependencies": {
+    "gulp-clean": "^0.3.2"
   }
 }

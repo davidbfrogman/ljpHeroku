@@ -12,6 +12,7 @@ var notify = require("gulp-notify");
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var gulpSharp = require('gulp-sharp');
+var clean = require('gulp-clean');
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
@@ -91,6 +92,11 @@ gulp.task('optimize-images', () => {
 		.pipe(gulp.dest(paths.imagesOut));
 });
 
+gulp.task('clean-images', () => {
+    return gulp.src(paths.imagesFulls, {read: false})
+        .pipe(clean());
+});
+
 // this task calls the clean task (located
 // in ./clean.js), then runs the build-system
 // and build-html tasks in parallel
@@ -116,6 +122,7 @@ gulp.task('build-for-deploy', function(callback) {
     'clean',
     'generate-thumbnails',
     ['build-system-no-source-maps', 'build-html', 'build-css-styles','build-content', 'optimize-images', 'copy-gifs'],
+     'clean-images',
     callback
   );
 });
