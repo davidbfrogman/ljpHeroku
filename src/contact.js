@@ -77,7 +77,7 @@ export class contact {
     }
 
     buildMapUserInterface() {
-        var mapLocation = new google.maps.LatLng(50.0773402, 14.4032811, 400);
+        var mapLocation = new google.maps.LatLng(50.077689, 14.458800, 400);
 
         var $mapis = $('#map');
 
@@ -108,7 +108,7 @@ export class contact {
                 icon: image,
                 title: 'Lynzi Judish Photography Studios',
                 infoWindow: {
-                    content: '<p><strong>Lynzi Judish Photography</strong><br/>Elišky Peškové 469/6, 150 00 Praha 5-Smíchov<br/>P: +420 736 430 572<br/>E: info@lynzijudish.com </p>'
+                    content: '<p><strong>Lynzi Judish Photography</strong><br/>Elišky Peškové 469/6, 150 00 Praha 5-Smíchov<br/>P: +420 774 391 528<br/>E: info@lynzijudish.com </p>'
                 }
             });
 
