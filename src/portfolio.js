@@ -46,12 +46,6 @@ export class Portfolio {
                 this.portfolioBooks = portfolioBooks;
                 var i = 0;
 
-                var fashionCount = 0;
-                var editorialCount = 0;
-                var headshotCount = 0;
-                var editorialPortraitCount = 0;
-                var bandCount = 0;
-
                 for (var book of this.portfolioBooks) {
                     //Now we need to remove the space from the string because later we're going to filter on it.
                     //For instance the editorial portrait category is something we want to filter on.
@@ -72,41 +66,6 @@ export class Portfolio {
                         return parseInt(a.order) - parseInt(b.order);
                     })
                 }
-
-                //Basically I want to filter out portfolio books if it's mobile.  I don't want to make users 
-                //wait forever to download all my images.
-                //I'm commenting this out for now.  It works, but I'm not exactly happy with how my port looks 
-                //without everything in there.
-                // if (this.dbpUtility.isMobile) {
-                //     this.portfolioBooks = this.portfolioBooks.filter(function(book) {
-                //         if (book.category == 'Fashion' && fashionCount < 5) {
-                //             fashionCount++;
-                //             console.log('Filtering Fashion Images for Mobile:' + fashionCount);
-                //             return true;
-                //         }
-                //         if (book.category == 'Editorial' && editorialCount < 3) {
-                //             editorialCount++;
-                //             console.log('Filtering Editorial Images for Mobile:' + editorialCount);
-                //             return true;
-                //         }
-                //         if (book.category == 'EditorialPortrait' && editorialPortraitCount < 6) {
-                //             editorialPortraitCount++;
-                //             console.log('Filtering Editorial Portrait Images for Mobile:' + editorialPortraitCount);
-                //             return true;
-                //         }
-                //         if (book.category == 'Band' && bandCount < 3) {
-                //             bandCount++;
-                //             console.log('Filtering Band Images for Mobile:' + bandCount);
-                //             return true;
-                //         }
-                //         if (book.category == 'Headshot' && headshotCount < 6) {
-                //             headshotCount++;
-                //             console.log('Filtering Band Images for Mobile:' + headshotCount);
-                //             return true;
-                //         }
-                //         return false;
-                //     });
-                // }
             });
     }
 
@@ -142,8 +101,8 @@ export class Portfolio {
             document.getElementsByTagName('head')[0].appendChild(link);
         }
 
-        //find the all filter on my portfolio, and add current class to it.
-        $('#All').addClass('current');
+        //find the editorial filter on my portfolio, and add current class to it.
+        $('#Editorial').addClass('current');
 
         //Even if we come back from the contact, and FAQ page, I want the text to show on my heading.  
         this.dbpheader.showHeroCaption();
