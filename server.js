@@ -10,7 +10,7 @@
     var logger   = morgan('combined');
     var favicon  = require('serve-favicon');
     var port     = process.env.PORT || 8080;        // set our port
-    var prodDomain = 'ljpspa.herokuapp.com/';       //change this whenever we setup our cname
+    var prodDomain = 'www.lynzijudish.com';       //change this whenever we setup our cname
     
     // configuration =================
     var config = {
@@ -110,10 +110,10 @@
             } 
         }
         //Redirect my old blog location.
-        else if(req.originalUrl.toLowerCase().indexOf('bloginstall') > 0){
+        else if(req.originalUrl.toLowerCase().indexOf('blog') > 0){
             res.status(301);    
             var cleaned = req.originalUrl.toLowerCase();
-            cleaned = cleaned.replace('/bloginstall','');
+            cleaned = cleaned.replace('/blog','');
             console.log('Cleaned Blog URL:' + cleaned);
             res.redirect(301, 'http://blog.lynzijudish.com' + cleaned);
         }
