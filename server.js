@@ -110,7 +110,7 @@
             } 
         }
         //Redirect my old blog location.
-        else if(req.originalUrl.toLowerCase().indexOf('/blog/') > 0){
+        else if(req.originalUrl.toLowerCase().indexOf('/blog/') >= 0){
             res.status(301);    
             var cleaned = req.originalUrl.toLowerCase();
             cleaned = cleaned.replace('/blog/','/');
