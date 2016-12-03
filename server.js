@@ -110,13 +110,13 @@
             } 
         }
         //Redirect my old blog location.
-        // else if(req.originalUrl.toLowerCase().indexOf('blog') > 0){
-        //     res.status(301);    
-        //     var cleaned = req.originalUrl.toLowerCase();
-        //     cleaned = cleaned.replace('/blog','');
-        //     console.log('Cleaned Blog URL:' + cleaned);
-        //     res.redirect(301, 'http://blog.lynzijudish.com' + cleaned);
-        // }
+        else if(req.originalUrl.toLowerCase().indexOf('.com/blog') > 0){
+            res.status(301);    
+            var cleaned = req.originalUrl.toLowerCase();
+            cleaned = cleaned.replace('.com/blog','.com');
+            console.log('Cleaned Blog URL:' + cleaned);
+            res.redirect(301, 'http://blog.lynzijudish.com' + cleaned);
+        }
         //This is URL cleanup for my original incarnation of my detail urls.
         else if(req.originalUrl.toLowerCase().indexOf('%20') > 0
         || ( req.originalUrl.toLowerCase().indexOf('-') > 0 &&
