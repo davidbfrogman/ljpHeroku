@@ -14,7 +14,7 @@ export class contact {
         this.smoothscroll = smoothscroll;
         this.dbpConfig = dbpConfig;
         this.dbpUtility = dbpUtility;
-        this.heading = 'Contact Prague Fashion Photogrpaher';
+        this.heading = 'Contact New York Fashion Photogrpaher';
                 
         this.http.configure(config => {
             config
