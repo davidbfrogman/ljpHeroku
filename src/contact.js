@@ -108,7 +108,7 @@ export class contact {
                 icon: image,
                 title: 'Lynzi Judish Photography Studios',
                 infoWindow: {
-                    content: '<p><strong>Lynzi Judish Photography</strong><br/>Vinohradská 1786/122, 130 00 Praha 3-Vinohrady<br/>P: +420 774 391 528<br/>E: info@lynzijudish.com </p>'
+                    content: '<p><strong>Lynzi Judish Photography</strong><br/>135 West 116th St. #4A New York, NY 10026<br/>P: 917-696-2711<br/>E: info@lynzijudish.com </p>'
                 }
             });
 
