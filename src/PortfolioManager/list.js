@@ -110,6 +110,10 @@ export class List {
     }
 
     SaveBooks() {
+        // for (var index = 0; index < this.portfolioBooks.length; index++) {
+        //     var element = this.portfolioBooks[index];
+        //     this.portfolioBooks[index].description =  element.description.replace('Prague', 'New York');
+        // }
         var spnSaveStatus = $('#spnSaveStatus');
         spnSaveStatus.show();
         spnSaveStatus.html('Saving....');

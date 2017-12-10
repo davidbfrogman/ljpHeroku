@@ -31,7 +31,15 @@ export class PortfolioManagerService {
     getAll() {
         return this.http.fetch('portfolioBooks')
             .then(response => response.json())
-            .then(portfolioBooks => this.portfolioBooks = portfolioBooks)
+            .then(portfolioBooks => {
+                // console.log(portfolioBooks);
+                // for (var index = 0; index < portfolioBooks.length; index++) {
+                //     var element = portfolioBooks[index];
+                //     element.description =  element.description.replace('Prague', 'New York');
+                // }
+                this.portfolioBooks = portfolioBooks;
+                return this.portfolioBooks;
+            })
     }
 
     getGetPortfolioCategories() {
