@@ -18,6 +18,9 @@
     "type": "git",
     "url": "http://github.com/davidbfrogman/DBPHeroku"
   },
+  "engines": {
+    "node": "6.x"
+  },
   "cacheDirectories": [
     "node_modules",
     "jspm_packages"
