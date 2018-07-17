@@ -19,7 +19,8 @@
     "url": "http://github.com/davidbfrogman/DBPHeroku"
   },
   "engines": {
-    "node": "6.x"
+    "node": "8.x",
+    "npm":"5.x"
   },
   "cacheDirectories": [
     "node_modules",
