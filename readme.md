@@ -29,3 +29,17 @@ you'll want to update that import statement.
 - JSPM giving you hell when you're trying to run jspm update try closing visual studio.  I'm thinking maybe the git plugin or intellisense is fucking with jspm in weird ways. 
 
 - For Lynzi's Prerender Account I used my hotmail account.
+
+
+#Installation
+
+`Clone Source`
+
+Now we have to install graphicsmagik for all the image manipulation I'm doing with gulp.  Don't be suprised if this takes a while, and installs a ton of shit.
+`brew install homebrew/core/vips --with-webp --with-graphicsmagick`
+
+You might have to run:
+`npm install --save jpegtran-bin`
+https://github.com/imagemin/imagemin/issues/154
+
+`npm install`
