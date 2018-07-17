@@ -43,3 +43,10 @@ You might have to run:
 https://github.com/imagemin/imagemin/issues/154
 
 `npm install`
+
+On my local box this build worked with
+`
+davebrown@Daves-MBP:~/Documents/ljpHeroku$ node --version
+v8.9.4
+davebrown@Daves-MBP:~/Documents/ljpHeroku$ npm --version
+5.8.0`
