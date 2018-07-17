@@ -50,3 +50,5 @@ davebrown@Daves-MBP:~/Documents/ljpHeroku$ node --version
 v8.9.4
 davebrown@Daves-MBP:~/Documents/ljpHeroku$ npm --version
 5.8.0`
+
+You can then just push directly from heroku.  At the current image count of around 600, it's pressing heroku's soft limits.  Only images that are actually live on the site should remain in the repository.
